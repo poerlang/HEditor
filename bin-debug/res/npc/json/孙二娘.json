@@ -1,0 +1,17 @@
+{
+	"name": "孙二娘",
+	"frameCenter": {
+		"孙二娘_att1": {
+			"y": -137,
+			"x": -140
+		},
+		"孙二娘_idle": {
+			"y": -137,
+			"x": -140
+		}
+	},
+	"path": "res/npc/json/孙二娘.json",
+	"pack": "res/npc/npc.gui",
+	"skills": [],
+	"actions": []
+}

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="rl5gnktt" jpegQuality="80" compressPNG="true">
+  <resources>
+    <image id="fza71j" name="deng.png" path="/pics/"/>
+    <image id="n5zf1q" name="bone.png" path="/pics/"/>
+    <image id="n5zf28" name="gou.png" path="/pics/"/>
+    <image id="k1sm2e" name="tab2.png" path="/pics/"/>
+    <image id="k1sm2f" name="tab1.png" path="/pics/"/>
+    <image id="k1sm2g" name="panelsml.png" path="/pics/" scale="9grid" scale9grid="9,25,70,54"/>
+    <image id="k1sm2h" name="panelbig.png" path="/pics/" scale="9grid" scale9grid="37,65,396,199"/>
+    <image id="k1sm2i" name="layoutBG.png" path="/pics/"/>
+    <image id="k1sm2j" name="cur_plus.png" path="/pics/" exported="true"/>
+    <image id="k1sm2k" name="close.png" path="/pics/"/>
+    <image id="k1sm2l" name="barbg.png" path="/pics/"/>
+    <component id="k1sm2n" name="winframe.xml" path="/com/"/>
+    <component id="k1sm2o" name="winclose.xml" path="/com/"/>
+    <image id="7izv2r" name="yuansub.png" path="/pics/"/>
+    <image id="7izv2s" name="yuanadd.png" path="/pics/"/>
+    <image id="7izv2t" name="yuan.png" path="/pics/"/>
+    <component id="7izv2v" name="yuanbt.xml" path="/btn/"/>
+    <image id="qsuq2z" name="yuancur.png" path="/pics/"/>
+    <component id="qsuq30" name="yuanbtcur.xml" path="/btn/"/>
+    <image id="njd131" name="yuanshadow.png" path="/pics/"/>
+    <component id="njd133" name="yuanshadowbtn.xml" path="/btn/"/>
+    <component id="fm6735" name="BuffNodePanel.xml" path="/" exported="true"/>
+    <component id="isuo36" name="NodeContainer.xml" path="/nodes/" exported="true"/>
+    <component id="iwxl37" name="BufferTypeItem.xml" path="/BuffEditor/" exported="true"/>
+    <image id="kbos3a" name="panelsml2.png" path="/pics/" scale="9grid" scale9grid="7,7,75,14"/>
+    <component id="kbos3b" name="NodeItem.xml" path="/nodes/" exported="true"/>
+    <component id="ixmn3e" name="PanelTitle.xml" path="/buffnods/"/>
+    <component id="ixmn3f" name="PropGroupUI.xml" path="/nodes/" exported="true"/>
+    <component id="ixmn3g" name="LabelInput.xml" path="/buffnods/" exported="true"/>
+    <component id="u34g3h" name="LabelCombox.xml" path="/buffnods/" exported="true"/>
+    <component id="k0f43i" name="LabelFile.xml" path="/buffnods/" exported="true"/>
+    <component id="yldf3w" name="Box.xml" path="/nodes/"/>
+    <component id="qj2i3x" name="Button.xml" path="/buildin/Button/"/>
+    <image id="qj2i3y" name="b7.png" path="/buildin/images/" scale="9grid" scale9grid="4,2,67,13"/>
+    <image id="qj2i3z" name="b5.png" path="/buildin/images/" scale="9grid" scale9grid="3,3,68,11"/>
+    <image id="qj2i40" name="b6.png" path="/buildin/images/" scale="9grid" scale9grid="4,2,65,12"/>
+    <component id="qj2i41" name="FlatIconButton.xml" path="/buildin/Button/"/>
+    <component id="qj2i42" name="IconButton.xml" path="/buildin/Button/"/>
+    <component id="qj2i43" name="AutoSizeButton.xml" path="/buildin/Button/"/>
+    <component id="qj2i44" name="LinkButton.xml" path="/buildin/Button/"/>
+    <component id="qj2i45" name="Checkbox.xml" path="/buildin/Checkbox/"/>
+    <image id="qj2i46" name="gou.png" path="/buildin/images/" qualityOption="source"/>
+    <component id="qj2i47" name="ComboBox.xml" path="/buildin/ComboBox/"/>
+    <image id="qj2i48" name="c1.png" path="/buildin/images/" scale="9grid" scale9grid="7,3,56,12" qualityOption="source"/>
+    <image id="qj2i49" name="c3.png" path="/buildin/images/" scale="9grid" scale9grid="11,5,47,10" qualityOption="source"/>
+    <image id="qj2i4a" name="c2.png" path="/buildin/images/" scale="9grid" scale9grid="5,5,52,10" qualityOption="source"/>
+    <image id="qj2i4b" name="c4.png" path="/buildin/images/" scale="9grid" scale9grid="10,5,45,10" qualityOption="source"/>
+    <component id="qj2i4c" name="ComboBoxPopup.xml" path="/buildin/ComboBox/"/>
+    <image id="qj2i4d" name="background.png" path="/buildin/images/" scale="9grid" scale9grid="11,8,192,115" qualityOption="source"/>
+    <component id="qj2i4e" name="ComboBoxItem.xml" path="/buildin/ComboBox/"/>
+    <component id="qj2i4f" name="DropdownButton.xml" path="/buildin/ComboBox/"/>
+    <image id="qj2i4g" name="j1.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i4h" name="j2.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i4i" name="j3.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i4j" name="j4.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i4k" name="button_light.png" path="/buildin/images/" scale="9grid" scale9grid="8,8,16,16"/>
+    <image id="qj2i4l" name="b1.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i4m" name="b2.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i4n" name="b3.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i4o" name="b4.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i4p" name="p4.png" path="/buildin/images/" scale="9grid" scale9grid="5,4,39,8" qualityOption="source"/>
+    <image id="qj2i4q" name="p16.png" path="/buildin/images/" scale="9grid" scale9grid="5,4,31,8" qualityOption="source"/>
+    <image id="qj2i4r" name="a8(1).png" path="/buildin/images/" scale="9grid" scale9grid="7,3,76,12" qualityOption="source"/>
+    <image id="qj2i4s" name="f1.png" path="/buildin/images/" scale="9grid" scale9grid="18,36,345,205" qualityOption="source"/>
+    <image id="qj2i4t" name="a13.png" path="/buildin/images/"/>
+    <image id="qj2i4u" name="a12.png" path="/buildin/images/"/>
+    <image id="qj2i4v" name="a11.png" path="/buildin/images/"/>
+    <image id="qj2i4w" name="a10.png" path="/buildin/images/"/>
+    <image id="qj2i4x" name="a15.png" path="/buildin/images/"/>
+    <image id="qj2i4y" name="a14.png" path="/buildin/images/"/>
+    <image id="qj2i4z" name="a16.png" path="/buildin/images/" scale="tile"/>
+    <image id="qj2i50" name="a9.png" path="/buildin/images/" scale9grid="6,5,6,10" qualityOption="source"/>
+    <image id="qj2i51" name="a8.png" path="/buildin/images/" scale9grid="3,2,6,9" qualityOption="source"/>
+    <image id="qj2i52" name="p1.png" path="/buildin/images/" scale="9grid" scale9grid="6,5,144,50" qualityOption="source"/>
+    <image id="qj2i53" name="VtSeperator2.png" path="/buildin/images/"/>
+    <image id="qj2i54" name="a18.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i55" name="HzSeperator2.png" path="/buildin/images/"/>
+    <image id="qj2i56" name="a9(1).png" path="/buildin/images/" scale="9grid" scale9grid="11,5,83,10" qualityOption="source"/>
+    <image id="qj2i57" name="p3.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i58" name="p2.png" path="/buildin/images/" scale="9grid" scale9grid="10,4,121,4" qualityOption="source"/>
+    <image id="qj2i59" name="a3.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i5a" name="a2.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i5b" name="a1.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i5c" name="a4.png" path="/buildin/images/"/>
+    <image id="qj2i5d" name="s10.png" path="/buildin/images/" scale="9grid" scale9grid="4,7,6,187" qualityOption="source"/>
+    <image id="qj2i5e" name="s6.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i5f" name="s4.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i5g" name="s5.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i5h" name="s9.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i5i" name="s7.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i5j" name="s8.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i5k" name="s1.png" path="/buildin/images/" scale="9grid" scale9grid="4,2,5,109" qualityOption="source"/>
+    <image id="qj2i5l" name="s2.png" path="/buildin/images/" scale="9grid" scale9grid="4,2,5,111" qualityOption="source"/>
+    <image id="qj2i5m" name="s3.png" path="/buildin/images/" scale="9grid" scale9grid="4,2,5,111" qualityOption="source"/>
+    <image id="qj2i5n" name="bar12.png" path="/buildin/images/" scale="9grid" scale9grid="3,3,96,6" qualityOption="source"/>
+    <image id="qj2i5o" name="bar14.png" path="/buildin/images/" scale="9grid" scale9grid="3,4,122,5" qualityOption="source"/>
+    <image id="qj2i5p" name="bar13.png" path="/buildin/images/" scale="9grid" scale9grid="3,4,129,5" qualityOption="source"/>
+    <image id="qj2i5q" name="2016-02-27_224540.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i5r" name="2016-02-27_224618.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i5s" name="2016-02-27_224602.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i5t" name="2016-02-27_224326.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i5u" name="2016-02-27_224443.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i5v" name="2016-02-27_224421.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i5w" name="p8.png" path="/buildin/images/"/>
+    <image id="qj2i5x" name="p9.png" path="/buildin/images/"/>
+    <image id="qj2i5y" name="f7.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i5z" name="f6.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i60" name="f8.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i61" name="a5.png" path="/buildin/images/" scale="9grid" scale9grid="3,5,60,10" qualityOption="source"/>
+    <image id="qj2i62" name="a7.png" path="/buildin/images/" scale="9grid" scale9grid="6,3,38,10" qualityOption="source"/>
+    <image id="qj2i63" name="a72.png" path="/buildin/images/" scale="9grid" scale9grid="7,5,38,10" qualityOption="source"/>
+    <image id="qj2i64" name="a52.png" path="/buildin/images/" scale="9grid" scale9grid="5,5,55,10" qualityOption="source"/>
+    <image id="qj2i65" name="bar15.png" path="/buildin/images/" scale="9grid" scale9grid="4,7,71,5" qualityOption="source"/>
+    <image id="qj2i66" name="2016-02-29_120446.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i67" name="2016-02-29_120502.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i68" name="i3.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i69" name="i2.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i6a" name="i1.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i6b" name="i5.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i6c" name="i4.png" path="/buildin/images/" qualityOption="source"/>
+    <image id="qj2i6d" name="f2.png" path="/buildin/images/" scale="9grid" scale9grid="32,36,295,85"/>
+    <image id="qj2i6e" name="f5.png" path="/buildin/images/"/>
+    <image id="qj2i6f" name="f4.png" path="/buildin/images/"/>
+    <image id="qj2i6g" name="f3.png" path="/buildin/images/"/>
+    <component id="qj2i6h" name="TextInput.xml" path="/buildin/Input/" exported="true"/>
+    <component id="qj2i6i" name="NumericInput.xml" path="/buildin/Input/"/>
+    <component id="qj2i6j" name="TextArea.xml" path="/buildin/Input/"/>
+    <component id="qj2i6k" name="ListItem.xml" path="/buildin/List/"/>
+    <component id="qj2i6l" name="IconListItem.xml" path="/buildin/List/"/>
+    <component id="qj2i6m" name="CheckIconListItem.xml" path="/buildin/List/"/>
+    <component id="qj2i6n" name="MenuBarItem.xml" path="/buildin/Menu/"/>
+    <component id="qj2i6o" name="PopupMenuItem.xml" path="/buildin/Menu/"/>
+    <component id="qj2i6p" name="PopupMenuItem2.xml" path="/buildin/Menu/"/>
+    <component id="qj2i6q" name="PopupMenuUI.xml" path="/buildin/Menu/"/>
+    <component id="qj2i6r" name="ProgressBar.xml" path="/buildin/ProgressBar/"/>
+    <component id="qj2i6s" name="RadioButton.xml" path="/buildin/RadioButton/"/>
+    <component id="qj2i6t" name="ScrollBar_VT.xml" path="/buildin/ScrollBar/" exported="true"/>
+    <component id="qj2i6u" name="ScrollUpButton.xml" path="/buildin/ScrollBar/"/>
+    <component id="qj2i6v" name="ScrollDownButton.xml" path="/buildin/ScrollBar/"/>
+    <component id="qj2i6w" name="GripButton_VT.xml" path="/buildin/ScrollBar/"/>
+    <component id="qj2i6x" name="ScrollBar_HZ.xml" path="/buildin/ScrollBar/" exported="true"/>
+    <component id="qj2i6y" name="GripButton_HZ.xml" path="/buildin/ScrollBar/"/>
+    <component id="qj2i6z" name="ScrollRightButton.xml" path="/buildin/ScrollBar/"/>
+    <component id="qj2i70" name="ScrollLeftButton.xml" path="/buildin/ScrollBar/"/>
+    <component id="qj2i71" name="TabCloseButton.xml" path="/buildin/Tab/"/>
+    <component id="qj2i72" name="ClosableTabButton.xml" path="/buildin/Tab/"/>
+    <component id="qj2i73" name="TabButton.xml" path="/buildin/Tab/"/>
+    <component id="qj2i74" name="TabIconButton.xml" path="/buildin/Tab/"/>
+    <component id="qj2i75" name="ClosableTabIconButton.xml" path="/buildin/Tab/"/>
+    <component id="qj2i76" name="FileTabButton.xml" path="/buildin/Tab/"/>
+    <component id="qj2i77" name="TitleBar.xml" path="/buildin/TitleBar/"/>
+    <component id="qj2i78" name="TooltipsWin.xml" path="/buildin/Tooltips/" exported="true"/>
+    <component id="qj2i79" name="TreeItem.xml" path="/buildin/Tree/"/>
+    <component id="qj2i7a" name="TreeExpandButton.xml" path="/buildin/Tree/"/>
+    <component id="qj2i7b" name="EditableTreeItem.xml" path="/buildin/Tree/"/>
+    <component id="qj2i7c" name="WindowFrame.xml" path="/buildin/Window/"/>
+    <component id="qj2i7d" name="WindowCloseButton.xml" path="/buildin/Window/"/>
+    <sound id="nqzz7f" name="click.wav" path="/buildin/Button/" exported="true"/>
+    <component id="lpwh7g" name="NpcPanel.xml" path="/npc/" exported="true"/>
+    <component id="lpwh7i" name="PicItem.xml" path="/npc/items/" exported="true"/>
+    <component id="lpwh7j" name="ActionPanel.xml" path="/npc/" exported="true"/>
+    <component id="lpwh7k" name="NpcItem.xml" path="/npc/items/" exported="true"/>
+    <component id="lpwh7l" name="NpcItemSml.xml" path="/npc/items/" exported="true"/>
+    <component id="iftz7m" name="ScenePanel.xml" path="/scene/" exported="true"/>
+    <component id="iftz7n" name="Npc.xml" path="/scene/" exported="true"/>
+    <component id="iftz7o" name="NpcInside.xml" path="/npc/items/"/>
+    <component id="iftz7p" name="NpcContainer.xml" path="/npc/items/"/>
+    <component id="iftz7q" name="BufferFileItem.xml" path="/BuffEditor/" exported="true"/>
+    <component id="iftz7r" name="MainPanel.xml" path="/" exported="true"/>
+    <component id="iftz7s" name="Alert.xml" path="/com/" exported="true"/>
+    <component id="iftz7t" name="AlertInput.xml" path="/com/" exported="true"/>
+    <component id="objb7u" name="CenterPoint.xml" path="/npc/"/>
+    <component id="objb7v" name="NpcPanelRight.xml" path="/npc/"/>
+    <component id="objb7x" name="ActionItem.xml" path="/npc/items/" exported="true"/>
+    <component id="ijaf7y" name="MixPanel.xml" path="/" exported="true"/>
+    <component id="ev8y80" name="StuffItem.xml" path="/" exported="true"/>
+    <component id="ev8y81" name="TextInputSmall.xml" path="/buildin/Input/"/>
+    <component id="ev8y82" name="MixItem.xml" path="/mix/" exported="true"/>
+    <component id="wap583" name="ButtonAdd.xml" path="/btn/"/>
+    <component id="wap584" name="ButtonSub.xml" path="/btn/"/>
+    <component id="gawt85" name="TagList.xml" path="/buildin/Checkbox/"/>
+    <component id="gawt86" name="ButtonToggleWithCheck.xml" path="/buildin/Button/" exported="true"/>
+    <component id="gawt87" name="ButtonToggle.xml" path="/buildin/Button/"/>
+    <component id="z51b88" name="beziContainer.xml" path="/"/>
+    <component id="z51b89" name="lineContainer.xml" path="/"/>
+  </resources>
+  <publish name="rawui" path="D:\BuffEditor\bin-debug\res" packageCount="2" genCode="true">
+    <atlas name="默认" index="0"/>
+  </publish>
+</packageDescription>

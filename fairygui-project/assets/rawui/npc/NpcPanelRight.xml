@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="266,356">
+  <displayList>
+    <graph id="n17_objb" name="n17" xy="0,0" size="266,356" alpha="0.1" type="rect" lineColor="#ffcccccc" fillColor="#ff000000"/>
+    <component id="n18_objb" name="center" src="objb7u" xy="126,297"/>
+  </displayList>
+</component>

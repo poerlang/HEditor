@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="126,28" extention="Button">
+  <controller name="button" pages="0,up,1,down" selected="1"/>
+  <displayList>
+    <graph id="n5_iftz" name="bg" xy="0,0" size="126,28" alpha="0.12" type="rect">
+      <gearDisplay controller="button" pages="1"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <text id="n6_iftz" name="title" xy="4,0" size="120,28" font="Verdana" fontSize="12" color="#999999" vAlign="middle" autoSize="none" text="">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <graph id="n7_iftz" name="touch" xy="0,0" size="125,28" locked="true" hideByEditor="true" alpha="0.01" type="rect" lineColor="#00000000" fillColor="#00000000">
+      <relation target="" sidePair="left-left,rightext-right"/>
+    </graph>
+  </displayList>
+  <Button mode="Radio"/>
+</component>

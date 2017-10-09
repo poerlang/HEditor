@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="400,400">
+  <displayList>
+    <component id="n0" name="lines" src="yldf3w" xy="0,0">
+      <relation target="" sidePair="width-width,height-height"/>
+    </component>
+    <component id="n1" name="nodes" src="yldf3w" xy="0,0">
+      <relation target="" sidePair="width-width,height-height"/>
+    </component>
+    <graph id="n2" name="sel" xy="48,35" size="100,100" visible="false" alpha="0.32" touchable="false" type="rect" lineColor="#ffffffff" fillColor="#ff00ff00"/>
+  </displayList>
+</component>

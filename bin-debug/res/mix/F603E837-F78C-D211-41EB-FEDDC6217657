@@ -1,0 +1,37 @@
+{
+	"ins": [
+		{
+			"num": 1,
+			"name": "金砖",
+			"level": 1
+		},
+		{
+			"num": 1,
+			"name": "黑金属",
+			"level": 1
+		}
+	],
+	"tags": [
+		"副将",
+		"技能"
+	],
+	"name": "F603E837-F78C-D211-41EB-FEDDC6217657",
+	"keys": [
+		"屠龙刀",
+		"tulongdao",
+		"tld",
+		"金砖",
+		"jinzhuan",
+		"jz",
+		"黑金属",
+		"heijinshu",
+		"hjs"
+	],
+	"outs": [
+		{
+			"num": 1,
+			"name": "屠龙刀",
+			"level": 1
+		}
+	]
+}

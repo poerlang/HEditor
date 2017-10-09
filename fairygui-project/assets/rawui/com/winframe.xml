@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="365,205">
+  <displayList>
+    <image id="n1" name="n1" src="k1sm2h" xy="0,0" size="365,205">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <graph id="n3" name="contentArea" xy="3,37" size="359,165">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <component id="n4" name="closeButton" src="k1sm2o" xy="342,10">
+      <relation target="" sidePair="top-top,left-right"/>
+    </component>
+    <graph id="n5" name="dragArea" xy="1,1" size="340,34">
+      <relation target="" sidePair="width-width"/>
+    </graph>
+    <text id="n2" name="title" xy="0,0" size="334,34" font="Verdana" fontSize="12" color="#999999" align="center" vAlign="middle" autoSize="none" text="">
+      <relation target="" sidePair="width-width"/>
+    </text>
+  </displayList>
+</component>

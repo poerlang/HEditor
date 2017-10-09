@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1200,910" bgColorEnabled="true" bgColor="#333333">
+  <displayList>
+    <component id="n166" name="frame" src="k1sm2n" xy="0,0" size="1200,910">
+      <relation target="" sidePair="width-width,height-height"/>
+    </component>
+    <list id="n169" name="panels" xy="958,39" size="238,868" overflow="scroll" lineGap="2">
+      <relation target="" sidePair="bottomext-bottom,right-right"/>
+    </list>
+    <graph id="n172" name="bg" xy="282,39" size="674,867" type="rect" fillColor="#ff333333">
+      <relation target="n171" sidePair="width-width,height-height"/>
+    </graph>
+    <component id="n171" name="c" src="isuo36" xy="282,37" size="674,867">
+      <relation target="" sidePair="leftext-left,rightext-right"/>
+      <relation target="" sidePair="height-height"/>
+    </component>
+    <list id="n173" name="nodelist" xy="129,38" size="151,868" visible="false" overflow="scroll" defaultItem="ui://rl5gnkttiwxl37">
+      <relation target="" sidePair="height-height"/>
+    </list>
+    <component id="n175_ilc4" name="save" src="qj2i3x" xy="872,5">
+      <Button title="保存"/>
+    </component>
+    <component id="n176_ptf4" name="newSkill" src="qj2i3x" xy="281,5">
+      <Button title="新建技能"/>
+    </component>
+    <list id="n170" name="bufflist" xy="4,38" size="275,868" overflow="scroll">
+      <relation target="" sidePair="height-height"/>
+    </list>
+    <component id="n177_tazg" name="newNode" src="qj2i3x" xy="371,5" size="107,25">
+      <Button title="新建 buff 节点"/>
+    </component>
+    <text id="n179_tazg" name="n179" xy="500,7" size="165,21" alpha="0.21" fontSize="12" color="#55ff55" text="选择多个节点，按 C 可以链接"/>
+    <text id="n180_lpwh" name="n180" xy="671,7" size="104,21" alpha="0.21" fontSize="12" color="#ffccff" text="按 Del 可删除节点"/>
+    <text id="n181_lpwh" name="n181" xy="11,7" size="28,21" fontSize="12" color="#cccccc" text="Buff"/>
+  </displayList>
+</component>

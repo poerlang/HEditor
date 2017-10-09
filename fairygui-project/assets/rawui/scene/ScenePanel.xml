@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="802,506">
+  <controller name="c1" pages="" selected="-1"/>
+  <displayList>
+    <component id="n0_iftz" name="frame" src="k1sm2n" xy="0,0" size="802,506">
+      <relation target="" sidePair="width-width,height-height"/>
+    </component>
+    <text id="n1_iftz" name="n1" xy="11,7" size="29,21" fontSize="12" color="#cccccc" text="场景"/>
+    <component id="n2_iftz" name="autoBloodReturn" src="qj2i45" xy="76,5" size="79,27">
+      <Button checked="true" title="当血量小于0时，自动回血"/>
+    </component>
+    <graph id="n6_iftz" name="n6" xy="5,37" size="793,464" alpha="0.27" type="rect" fillColor="#ff000000">
+      <relation target="n3_iftz" sidePair="width-width,height-height"/>
+    </graph>
+    <component id="n3_iftz" name="container" src="iftz7p" xy="6,38" size="791,462">
+      <relation target="" sidePair="width-width,height-height"/>
+    </component>
+    <component id="n7_iftz" name="borderCheck" src="qj2i45" xy="261,5" size="79,27">
+      <Button checked="true" title="显示外框" page="0"/>
+    </component>
+  </displayList>
+</component>

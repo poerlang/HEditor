@@ -1,0 +1,14 @@
+{
+	"buttonClickSound":"ui://rl5gnkttnqzz7f",
+	"colorScheme":["自定义颜色 #FF0000"],
+	"font":"微软雅黑",
+	"fontSize":12,
+	"fontSizeScheme":["自定义字体大小 30"],
+	"scrollBars":{
+		"defaultDisplay":"visible",
+		"horizontal":"ui://rl5gnkttqj2i6x",
+		"vertical":"ui://rl5gnkttqj2i6t"
+	},
+	"textColor":"#000000",
+	"tipsRes":"ui://rl5gnkttqj2i78"
+}

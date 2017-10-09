@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="705,97">
+  <displayList>
+    <component id="n0_iftz" name="frame" src="k1sm2n" xy="0,0" size="705,97">
+      <relation target="" sidePair="width-width,height-height"/>
+    </component>
+    <component id="n1_iftz" name="panelNpc" src="qj2i3x" xy="7,40" size="78,49">
+      <Button title="Npc" titleFontSize="19"/>
+    </component>
+    <component id="n2_iftz" name="panelAction" src="qj2i3x" xy="87,40" size="78,49" visible="false">
+      <Button title="动作" titleFontSize="19"/>
+    </component>
+    <component id="n3_iftz" name="panelBuff" src="qj2i3x" xy="167,40" size="78,49">
+      <Button title="Buff" titleFontSize="19"/>
+    </component>
+    <component id="n4_iftz" name="panelScene" src="qj2i3x" xy="247,40" size="78,49">
+      <Button title="场景" titleFontSize="19"/>
+    </component>
+    <component id="n5_ijaf" name="panelMix" src="qj2i3x" xy="327,40" size="78,49">
+      <Button title="合成" titleFontSize="19"/>
+    </component>
+  </displayList>
+</component>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="279,20">
+  <displayList>
+    <richtext id="n2" name="left" xy="1,0" size="127,21" fontSize="12" color="#666666" autoSize="none" text="">
+      <relation target="" sidePair="width-width%"/>
+    </richtext>
+    <component id="n9" name="right" src="qj2i47" xy="130,0" size="148,19">
+      <relation target="" sidePair="left-center,width-width%"/>
+      <ComboBox visibleItemCount="10"/>
+    </component>
+  </displayList>
+</component>

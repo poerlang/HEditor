@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="136,23" extention="Button">
+  <controller name="button" pages="0,up,1,down" selected="0"/>
+  <displayList>
+    <graph id="n10_sww6" name="bg" xy="0,0" size="136,22" alpha="0.08" type="rect" lineColor="#ffffffff">
+      <gearLook controller="button" pages="0,1" values="0.08,0,0,1|0.13,0,0,1" tween="true" duration="0.1"/>
+      <relation target="n4" sidePair="width-width,height-height"/>
+    </graph>
+    <text id="n4" name="title" xy="0,0" size="136,23" fontSize="12" color="#cccccc" vAlign="middle" autoSize="none" singleLine="true" text="">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+  </displayList>
+  <Button mode="Radio"/>
+</component>

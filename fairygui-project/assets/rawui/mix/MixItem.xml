@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="299,52" extention="Button">
+  <controller name="button" pages="0,up,1,down" selected="1"/>
+  <displayList>
+    <graph id="n3" name="n3" xy="0,0" size="299,52" alpha="0.15" touchable="false" type="rect" lineSize="0" fillColor="#ffcccccc">
+      <gearDisplay controller="button" pages="0,1"/>
+      <gearLook controller="button" pages="0,1" values="0.05,0,0,0|0.15,0,0,0" tween="true" duration="0.2"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <graph id="n10_sww6" name="n10" xy="0,0" size="299,22" alpha="0.09" type="rect" lineColor="#ff999999" fillColor="#ff666666">
+      <relation target="n4" sidePair="width-width,height-height"/>
+    </graph>
+    <text id="n4" name="title" xy="0,0" size="299,23" fontSize="12" color="#cccccc" vAlign="middle" autoSize="none" singleLine="true" text="">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <graph id="n11_sww6" name="n11" xy="0,23" size="299,28" alpha="0.04" type="rect" lineColor="#ffffffff" fillColor="#ff999999">
+      <relation target="n8_lpwh" sidePair="width-width,height-height"/>
+    </graph>
+    <text id="n8_lpwh" name="txt" xy="0,23" size="299,28" alpha="0.32" fontSize="12" color="#cccccc" vAlign="middle" autoSize="none" text="">
+      <relation target="" sidePair="rightext-right"/>
+    </text>
+  </displayList>
+  <Button mode="Radio"/>
+</component>

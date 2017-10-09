@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="259,172">
+  <displayList>
+    <image id="n1" name="bg" src="k1sm2g" xy="0,5" size="259,167" alpha="0.45">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <component id="n0" name="top" src="ixmn3e" xy="0,0" size="260,27">
+      <relation target="" sidePair="width-width"/>
+    </component>
+    <list id="n2" name="main" xy="3,31" size="253,137" margin="0,0,0,0" lineGap="2">
+      <relation target="" sidePair="width-width,height-height"/>
+    </list>
+  </displayList>
+</component>

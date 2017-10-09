@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="260,20">
+  <displayList>
+    <component id="n8" name="right" src="qj2i6i" xy="120,0" size="139,20">
+      <relation target="" sidePair="left-center,width-width%"/>
+    </component>
+    <richtext id="n2" name="left" xy="0,0" size="120,21" fontSize="12" color="#666666" autoSize="none" text="">
+      <relation target="" sidePair="width-width%"/>
+    </richtext>
+  </displayList>
+</component>

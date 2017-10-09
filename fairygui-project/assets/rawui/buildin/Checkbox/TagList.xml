@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="148,277">
+  <displayList>
+    <graph id="n234_gawt" name="bg2" xy="-365,-127" size="856,524" alpha="0" type="rect" lineSize="0"/>
+    <graph id="n233_gawt" name="bg" xy="0,0" size="148,277" type="rect" fillColor="#ff333333">
+      <relation target="n232_gawt" sidePair="left-left,top-top"/>
+      <relation target="n232_gawt" sidePair="width-width,height-height"/>
+    </graph>
+    <list id="n232_gawt" name="list" xy="0,0" size="148,277" selectionMode="multipleSingleClick" overflow="scroll" margin="5,5,5,5" defaultItem="ui://rl5gnkttqj2i45" autoItemSize="false"/>
+  </displayList>
+</component>

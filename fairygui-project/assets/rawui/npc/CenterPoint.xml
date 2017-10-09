@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="23,13">
+  <displayList>
+    <image id="n8_lpwh" name="centerBG" src="k1sm2j" xy="0,0" size="23,13" group="n25_iftz" alpha="0.09"/>
+    <image id="n7_lpwh" name="center" src="k1sm2j" xy="9,4" group="n25_iftz"/>
+    <group id="n25_iftz" name="n25" xy="0,0" size="23,13" advanced="true">
+      <relation target="" sidePair="bottom-bottom"/>
+    </group>
+  </displayList>
+</component>

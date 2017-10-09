@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="789,561" designImageLayer="1">
+  <controller name="border" pages="0,,1," selected="0"/>
+  <displayList>
+    <component id="n0_lpwh" name="frame" src="k1sm2n" xy="0,0" size="789,561" locked="true">
+      <relation target="" sidePair="width-width,height-height"/>
+    </component>
+    <graph id="n21_lpwh" name="n21" xy="303,228" size="482,262" locked="true" alpha="0.11" type="rect" lineColor="#ff999999" fillColor="#ff000000">
+      <relation target="" sidePair="rightext-right,bottomext-bottom"/>
+    </graph>
+    <graph id="n26_iftz" name="n26" xy="5,70" size="297,487" alpha="0.13" type="rect" lineColor="#ffffffff" fillColor="#ff000000"/>
+    <graph id="n22_975l" name="border" xy="511,300" size="50,30" type="rect" lineColor="#1cffffff" fillColor="#0d000000">
+      <gearDisplay controller="border" pages="0"/>
+      <relation target="n6_lpwh" sidePair="left-left,left-left"/>
+      <relation target="n6_lpwh" sidePair="width-width,height-height"/>
+    </graph>
+    <list id="n1_lpwh" name="listPics" xy="5,70" size="297,487" overflow="scroll">
+      <relation target="" sidePair="bottomext-bottom"/>
+    </list>
+    <component id="n3_lpwh" name="search" src="qj2i6h" xy="5,39" size="297,28"/>
+    <graph id="n5_lpwh" name="n5" xy="304,96" size="480,130" alpha="0.1" type="rect" lineColor="#ffffffff" fillColor="#ff000000">
+      <relation target="n4_lpwh" sidePair="left-left,top-top"/>
+      <relation target="n4_lpwh" sidePair="width-width,height-height"/>
+    </graph>
+    <list id="n4_lpwh" name="listPicInAction" xy="306,99" size="475,124" layout="flow_hz" overflow="scroll" scroll="horizontal" scrollBar="hidden" defaultItem="ui://rl5gnkttlpwh7l">
+      <relation target="" sidePair="rightext-right"/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <loader id="n6_lpwh" name="framePic" xy="511,300" size="50,30" autoSize="true"/>
+    <component id="n17_lpwh" name="import" src="qj2i3x" xy="305,70" size="218,24">
+      <Button title="将左边选中的图片加入当前动作"/>
+    </component>
+    <component id="n18_lpwh" name="delAllFrame" src="qj2i3x" xy="698,42" size="85,52">
+      <Button title="删除所有帧"/>
+    </component>
+    <component id="n19_lpwh" name="delFrame" src="qj2i3x" xy="612,42" size="85,52">
+      <Button title="删除当前帧"/>
+    </component>
+    <component id="n20_lpwh" name="n20" src="qj2i47" xy="305,41" size="217,23">
+      <ComboBox visibleItemCount="10"/>
+    </component>
+    <component id="n9_lpwh" name="play" src="qj2i3x" xy="464,493" size="147,58" group="n24_iftz">
+      <Button title="播放" titleFontSize="18"/>
+    </component>
+    <component id="n11_lpwh" name="pause" src="qj2i3x" xy="616,493" size="54,58" group="n24_iftz">
+      <Button title="暂停" titleFontSize="18"/>
+    </component>
+    <component id="n13_lpwh" name="frameSec" src="qj2i6i" xy="753,512" size="28,19" group="n24_iftz">
+      <Label title="234"/>
+    </component>
+    <component id="n15_lpwh" name="loop" src="qj2i45" xy="336,493" size="79,27" group="n24_iftz">
+      <Button checked="true" title="循环播放"/>
+    </component>
+    <text id="n16_lpwh" name="n16" xy="689,510" size="61,24" group="n24_iftz" fontSize="14" color="#999999" singleLine="true" text="每秒帧数"/>
+    <component id="n23_975l" name="borderCheck" src="qj2i45" xy="336,526" size="79,27" group="n24_iftz">
+      <Button checked="true" title="显示外框" controller="border" page="0"/>
+    </component>
+    <group id="n24_iftz" name="n24" xy="336,493" size="445,60" advanced="true">
+      <relation target="" sidePair="bottom-bottom"/>
+    </group>
+    <component id="n8_lpwh" name="n8" src="objb7u" xy="523,435"/>
+    <text id="n27_iftz" name="n27" xy="11,7" size="29,21" fontSize="12" color="#cccccc" text="动作"/>
+  </displayList>
+</component>

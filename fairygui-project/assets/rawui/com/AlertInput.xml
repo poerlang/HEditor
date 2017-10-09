@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="332,210">
+  <displayList>
+    <component id="n0_iftz" name="frame" src="k1sm2n" xy="0,0" size="332,210">
+      <relation target="" sidePair="width-width,height-height"/>
+    </component>
+    <component id="n3_iftz" name="txt" src="qj2i6h" xy="27,90" size="280,37">
+      <Label titleFontSize="25"/>
+    </component>
+    <text id="n4_iftz" name="n4" xy="119,2" size="92,35" alpha="0.37" fontSize="24" color="#ffffff" align="center" autoSize="none" text="输 入"/>
+    <component id="n1_iftz" name="ok" src="qj2i3x" xy="27,157" size="136,37">
+      <Button title="确定" titleFontSize="19"/>
+    </component>
+    <component id="n2_iftz" name="cancel" src="qj2i3x" xy="173,157" size="136,37">
+      <Button title="取消" titleFontSize="19"/>
+    </component>
+    <text id="n5_iftz" name="title" xy="29,55" size="273,34" alpha="0.55" fontSize="23" color="#ffffff" align="center" autoSize="none" text=""/>
+  </displayList>
+</component>

@@ -1,0 +1,284 @@
+{
+	"all":{
+		"stuff":[
+			{
+				"name"	:	"name",
+				"cname"	:	"stuff名称",
+				"tip"	:	"",
+				"panel"	:	"类型",
+				"type"	:	"str"
+			},
+			{
+				"name"	:	"subs",
+				"cname"	:	"子物品",
+				"tip"	:	"",
+				"panel"	:	"类型",
+				"type"	:	"list"
+			},
+			{
+				"name"	:	"num",
+				"cname"	:	"数量",
+				"tip"	:	"",
+				"panel"	:	"类型",
+				"type"	:	"num",
+				"def"	:	1
+			}
+		],
+		"buff":[
+			{
+				"name"	:	"name",
+				"cname"	:	"buff名称",
+				"tip"	:	"",
+				"panel"	:	"类型",
+				"type"	:	"str"
+			},
+			{
+				"name"	:	"level",
+				"cname"	:	"buff等级",
+				"tip"	:	"",
+				"panel"	:	"类型",
+				"type"	:	"num",
+				"def"	:	1
+			},	
+			{
+				"name"	:	"emTriggerType",
+				"cname"	:	"触发条件",
+				"tip"	:	"",
+				"panel"	:	"类型",
+				"type"	:	"int,combox",
+				"combox":	"直接触发,0,直接触发并飞向目标,1,等待父级buff命中时触发,2"
+			},
+			{
+				"name"	:	"emAreaType",
+				"cname"	:	"命中范围类型",
+				"tip"	:	"",
+				"panel"	:	"命中",
+				"type"	:	"int,combox",
+				"combox":	"单体普攻,0,矩形群攻,1,扇形群攻,2"
+			},
+			{
+				"name"	:	"r",
+				"cname"	:	"半径或矩形长度",
+				"tip"	:	"",
+				"panel"	:	"命中",
+				"type"	:	"num",
+				"def"	:	300
+			},
+			{
+				"name"	:	"hit_a",
+				"cname"	:	"角度或矩形宽度",
+				"tip"	:	"",
+				"panel"	:	"命中",
+				"type"	:	"num",
+				"def"	:	300
+			},
+			{
+				"name"	:	"speed",
+				"cname"	:	"移动速度",
+				"tip"	:	"",
+				"panel"	:	"命中",
+				"type"	:	"int",
+				"def"	:	0
+			},
+			{
+				"name"	:	"delay",
+				"cname"	:	"延迟(秒)",
+				"tip"	:	"",
+				"panel"	:	"时间",
+				"type"	:	"num"
+			},
+			{
+				"name"	:	"loop",
+				"cname"	:	"循环次数",
+				"panel"	:	"时间",
+				"tip"	:	"",
+				"type"	:	"num"
+			},			
+			{
+				"name"	:	"loopTime",
+				"cname"	:	"每阶段持续时间(秒)",
+				"panel"	:	"时间",
+				"tip"	:	"",
+				"type"	:	"num"
+			},
+			{
+				"name"	:	"emAction",
+				"cname"	:	"动作",
+				"panel"	:	"特效",
+				"tip"	:	"",
+				"type"	:	"int,combox",
+				"combox":	"idle,0,atk1,1,atk2,2,atk3,3,atk4,4,atk5,5,skill1,6,skill2,7,skill3,8,skill4,9,skill5,10,idleWait,11,fidle,12,win,13,run,14,dead,15,hurt,16"
+			},
+			{
+				"name"	:	"emHurtTargetType",
+				"cname"	:	"作用对象",
+				"tip"	:	"作用于友方还是敌方",
+				"panel"	:	"伤害",
+				"type"	:	"int,combox",
+				"combox":	"敌方,0,友方,1,怪物,2,NPC,3,全部对象,4"
+			},
+			{
+				"name"	:	"hurtFactor",
+				"cname"	:	"伤害加成倍率",
+				"panel"	:	"伤害",
+				"tip"	:	"伤害数值会乘上上这个倍率. 这里是除了成长 xls 外, 对伤害造成影响的值, \n如果此值为 1, 则不做变化, \n如果此值为 1.2 则代表伤害加成 20%",
+				"type"	:	"num",
+				"def"	:	1
+			},
+			{
+				"name"	:	"changeKey",
+				"cname"	:	"伤害针对的属性",
+				"tip"	:	"指定消耗对方的血量或者是魔法值",
+				"panel"	:	"伤害",
+				"type"	:	"int,combox",
+				"combox":	"血量值,0,魔法值,1"
+			},
+			{
+				"name"	:	"changeVal",
+				"cname"	:	"伤害绝对数值",
+				"panel"	:	"伤害",
+				"tip"	:	"",
+				"type"	:	"num",
+				"def"	:	1
+			},
+			{
+				"name"	:	"changeValBfb",
+				"cname"	:	"伤害百分比",
+				"tip"	:	"当前量乘以百分比",
+				"panel"	:	"伤害",
+				"type"	:	"num",
+				"def"	:	0
+			},
+			{
+				"name"	:	"url",
+				"cname"	:	"粒子文件的链接",
+				"panel"	:	"特效",
+				"tip"	:	"",
+				"type"	:	"str,file"
+			},
+			{
+				"name"	:	"delay",
+				"cname"	:	"特效延迟播放秒数",
+				"panel"	:	"特效",
+				"tip"	:	"",
+				"type"	:	"num"
+			},
+			{
+				"name"	:	"emTrailType",
+				"cname"	:	"拖尾类型",
+				"panel"	:	"特效",
+				"tip"	:	"",
+				"type"	:	"num"
+			},
+			{
+				"name"	:	"live",
+				"cname"	:	"特效持续时间",
+				"panel"	:	"特效",
+				"tip"	:	"",
+				"type"	:	"num",
+				"def"	:	2
+			},
+			{
+				"name"	:	"fallheight",
+				"cname"	:	"掉落高度",
+				"panel"	:	"特效",
+				"tip"	:	"",
+				"type"	:	"num"
+			},
+			{
+				"name"	:	"fallspeed",
+				"cname"	:	"掉落速度",
+				"panel"	:	"特效",
+				"tip"	:	"",
+				"type"	:	"num"
+			},
+			{
+				"name"	:	"boneName",
+				"cname"	:	"粒子释放的骨骼位置",
+				"panel"	:	"特效",
+				"tip"	:	"",
+				"type"	:	"num"
+			},
+			{
+				"name"	:	"offx",
+				"cname"	:	"横向偏移",
+				"panel"	:	"特效",
+				"tip"	:	"",
+				"type"	:	"num"
+			},
+			{
+				"name"	:	"offz",
+				"cname"	:	"纵向偏移",
+				"panel"	:	"特效",
+				"tip"	:	"",
+				"type"	:	"num"
+			},
+			{
+				"name"	:	"offy",
+				"cname"	:	"垂直偏移",
+				"panel"	:	"特效",
+				"tip"	:	"",
+				"type"	:	"num"
+			},
+			{
+				"name"	:	"offr",
+				"cname"	:	"旋转偏移",
+				"panel"	:	"特效",
+				"tip"	:	"",
+				"type"	:	"num"
+			},
+			{
+				"name"	:	"trailFlyCurveHeight",
+				"cname"	:	"拖尾曲线高度",
+				"panel"	:	"特效",
+				"tip"	:	"",
+				"type"	:	"num"
+			},
+			{
+				"name"	:	"trailLen",
+				"cname"	:	"拖尾长度",
+				"panel"	:	"特效",
+				"tip"	:	"",
+				"type"	:	"num"
+			},
+			{
+				"name"	:	"trailheight",
+				"cname"	:	"拖尾高度",
+				"panel"	:	"特效",
+				"tip"	:	"",
+				"type"	:	"num"
+			},
+			{
+				"name"	:	"trailTexture",
+				"cname"	:	"拖尾贴图",
+				"panel"	:	"特效",
+				"tip"	:	"",
+				"type"	:	"num"
+			},
+			{
+				"name"	:	"shackY",
+				"cname"	:	"振幅",
+				"panel"	:	"特效",
+				"tip"	:	"",
+				"type"	:	"num",
+				"def"	:	4
+			},
+			{
+				"name"	:	"shackDelay",
+				"cname"	:	"震动延迟",
+				"panel"	:	"特效",
+				"tip"	:	"",
+				"type"	:	"num",
+				"def"	:	4
+			},
+			{
+				"name"	:	"shackNum",
+				"cname"	:	"振动次数",
+				"panel"	:	"特效",
+				"tip"	:	"",
+				"type"	:	"num",
+				"def"	:	3
+			}
+		]
+	}
+}

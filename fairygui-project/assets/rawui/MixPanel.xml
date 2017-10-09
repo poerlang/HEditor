@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1200,813" bgColorEnabled="true" bgColor="#333333">
+  <controller name="addGoup" pages="0,hide,1,show" selected="0"/>
+  <controller name="taglistGroup" pages="0,hide,1,show" selected="0"/>
+  <controller name="mixSel" pages="0,hide,1,show" selected="0"/>
+  <displayList>
+    <component id="n166" name="frame" src="k1sm2n" xy="0,0" size="1200,813">
+      <relation target="" sidePair="width-width,height-height"/>
+    </component>
+    <list id="n169" name="panels" xy="958,39" size="238,771" overflow="scroll" lineGap="2">
+      <relation target="" sidePair="bottomext-bottom,right-right"/>
+    </list>
+    <graph id="n172" name="bg1" xy="282,74" size="674,86" alpha="0.14" type="rect" fillColor="#ffffcc66"/>
+    <graph id="n183_ev8y" name="n183" xy="282,512" size="673,297" alpha="0.16" type="rect" lineColor="#ffcccccc" fillColor="#ff000000">
+      <relation target="n173" sidePair="left-left,top-top"/>
+      <relation target="n173" sidePair="width-width,height-height"/>
+    </graph>
+    <component id="n175_ilc4" name="save" src="qj2i3x" xy="872,6">
+      <Button title="保存"/>
+    </component>
+    <list id="n170" name="mixlist" xy="4,38" size="276,771" overflow="scroll" scrollBarFlags="4" scrollBarRes="ui://rl5gnkttqj2i6t," lineGap="3" defaultItem="ui://rl5gnkttev8y82">
+      <relation target="" sidePair="height-height"/>
+    </list>
+    <text id="n181_lpwh" name="n181" xy="11,7" size="29,21" fontSize="12" color="#cccccc" text="合成"/>
+    <component id="n182_ev8y" name="newStuff" src="qj2i3x" xy="282,485">
+      <relation target="n173" sidePair="top-top"/>
+      <Button title="新建物品"/>
+    </component>
+    <component id="n187_ev8y" name="stuffFilterInput" src="qj2i6i" xy="670,485" size="237,24">
+      <relation target="n173" sidePair="top-top"/>
+    </component>
+    <text id="n188_ev8y" name="n188" xy="640,488" size="29,21" alpha="0.46" fontSize="12" color="#999999" text="过滤">
+      <relation target="n173" sidePair="top-top"/>
+    </text>
+    <graph id="n192_ev8y" name="bg2" xy="282,161" size="674,319" alpha="0.07" type="rect" fillColor="#ff33cc00">
+      <relation target="n203_ev8y" sidePair="bottomext-bottom"/>
+    </graph>
+    <text id="n194_ev8y" name="n194" xy="284,76" size="53,21" alpha="0.23" fontSize="12" color="#ffffff" text="产出区域"/>
+    <text id="n195_ev8y" name="n195" xy="284,165" size="53,21" alpha="0.18" fontSize="12" color="#ffffff" text="材料区域"/>
+    <component id="n196_ev8y" name="mixFilterInput" src="qj2i6i" xy="46,6" size="120,24"/>
+    <component id="n199_ev8y" name="n199" src="qj2i45" xy="399,9" visible="false" alpha="0.62">
+      <Button checked="true" title="材料"/>
+    </component>
+    <component id="n200_ev8y" name="n200" src="qj2i45" xy="445,9" visible="false" alpha="0.62">
+      <Button checked="true" title="产出"/>
+    </component>
+    <list id="n202_ev8y" name="outlist" xy="282,100" size="674,57" layout="flow_hz" overflow="scroll" scrollBarFlags="84" margin="0,0,3,3" scrollBarRes="ui://rl5gnkttqj2i6t," defaultItem="ui://rl5gnkttev8y80"/>
+    <list id="n203_ev8y" name="inlist" xy="282,187" size="674,292" overflow="scroll" scrollBarFlags="4" margin="0,0,3,3" scrollBarRes="ui://rl5gnkttqj2i6t," defaultItem="ui://rl5gnkttev8y80">
+      <relation target="n173" sidePair="bottomext-top"/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <component id="n204_ev8y" name="toOut" src="qj2i3x" xy="498,485" size="58,25">
+      <relation target="n173" sidePair="top-top"/>
+      <Button title="to 产出" titleColor="#cc9900"/>
+    </component>
+    <component id="n205_ev8y" name="toIn" src="qj2i3x" xy="560,485" size="58,25">
+      <relation target="n173" sidePair="top-top"/>
+      <Button title="to 材料" titleColor="#33aa00"/>
+    </component>
+    <component id="n215_ev8y" name="setLabel" src="gawt87" xy="872,42" size="85,27" alpha="0.27" touchable="false" grayed="true">
+      <gearLook controller="mixSel" pages="0,1" values="0.27,0,1,0|1,0,0,1"/>
+      <Button title="标签" titleColor="#999999" controller="taglistGroup" page="1"/>
+    </component>
+    <component id="n216_ev8y" name="setTxt" src="qj2i3x" xy="787,42" size="85,27" alpha="0.25" touchable="false" grayed="true">
+      <gearLook controller="mixSel" pages="0,1" values="0.25,0,1,0|1,0,0,1"/>
+      <Button title="对话" titleColor="#999999"/>
+    </component>
+    <text id="n218_ev8y" name="desc" xy="538,44" size="244,21" fontSize="12" color="#666666" autoSize="none" singleLine="true" text=""/>
+    <list id="n173" name="stufflist" xy="282,512" size="673,297" layout="flow_hz" overflow="scroll" scrollBarFlags="4" margin="3,3,3,3" scrollBarRes="ui://rl5gnkttqj2i6t," defaultItem="ui://rl5gnkttev8y80">
+      <relation target="" sidePair="bottom-bottom"/>
+    </list>
+    <component id="n227_gawt" name="domixfilter" src="qj2i3x" xy="167,6" size="36,25">
+      <Button title="过滤"/>
+    </component>
+    <component id="n176_ptf4" name="newMix" src="qj2i3x" xy="280,6">
+      <Button title="新建合成"/>
+    </component>
+    <component id="n228_gawt" name="dostufffilter" src="qj2i3x" xy="907,485" size="51,25">
+      <relation target="n173" sidePair="bottom-bottom"/>
+      <Button title="过滤"/>
+    </component>
+    <component id="n222_wap5" name="addLevel" src="wap583" xy="364,38" size="19,16" group="n229_gawt">
+      <Button icon="ui://rl5gnkttqj2i5g"/>
+    </component>
+    <component id="n223_wap5" name="subLevel" src="wap584" xy="364,56" size="19,16" group="n229_gawt">
+      <Button icon="ui://rl5gnkttqj2i5j"/>
+    </component>
+    <component id="n225_wap5" name="addNum" src="wap583" xy="474,38" size="19,16" group="n229_gawt">
+      <Button icon="ui://rl5gnkttqj2i5g"/>
+    </component>
+    <component id="n226_wap5" name="subNum" src="wap584" xy="474,56" size="19,16" group="n229_gawt">
+      <Button icon="ui://rl5gnkttqj2i5j"/>
+    </component>
+    <text id="n230_gawt" name="n230" xy="284,33" size="40,20" group="n229_gawt" fontSize="10" color="#666666" autoSize="none" text="level"/>
+    <text id="n231_gawt" name="n231" xy="393,33" size="40,20" group="n229_gawt" fontSize="10" color="#666666" autoSize="none" text="num"/>
+    <component id="n220_wap5" name="level" src="qj2i6i" xy="284,46" size="78,20" group="n229_gawt"/>
+    <component id="n224_wap5" name="num" src="qj2i6i" xy="394,46" size="78,20" group="n229_gawt"/>
+    <group id="n229_gawt" name="addGroup" xy="284,33" size="209,39" advanced="true">
+      <gearDisplay controller="addGoup" pages="1"/>
+    </group>
+    <component id="n232_gawt" name="taglist" src="gawt85" xy="724,43">
+      <gearDisplay controller="taglistGroup" pages="1"/>
+    </component>
+    <component id="n233_z51b" name="n233" src="qj2i45" xy="535,9" alpha="0.62">
+      <Button checked="true" title="多等级合成模式（曲线）"/>
+    </component>
+  </displayList>
+</component>

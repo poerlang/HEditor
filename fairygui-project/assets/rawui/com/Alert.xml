@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="332,210">
+  <controller name="c1" pages="0,确定,1,确定加取消" selected="0"/>
+  <displayList>
+    <component id="n0_iftz" name="frame" src="k1sm2n" xy="0,0" size="332,210">
+      <relation target="" sidePair="width-width,height-height"/>
+    </component>
+    <text id="n3_iftz" name="title" xy="28,45" size="280,106" fontSize="22" color="#ffffff" align="center" vAlign="middle" autoSize="none" text=""/>
+    <text id="n4_iftz" name="n4" xy="119,2" size="92,35" alpha="0.37" fontSize="24" color="#ffffff" align="center" autoSize="none" text="提 示"/>
+    <component id="n1_iftz" name="ok" src="qj2i3x" xy="98,158" size="136,37">
+      <gearXY controller="c1" pages="0" values="98,158" default="27,157"/>
+      <Button title="确定" titleFontSize="19"/>
+    </component>
+    <component id="n2_iftz" name="cancel" src="qj2i3x" xy="173,157" size="136,37">
+      <gearDisplay controller="c1" pages="1"/>
+      <Button title="取消" titleFontSize="19"/>
+    </component>
+  </displayList>
+</component>

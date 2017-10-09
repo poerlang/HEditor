@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="767,400">
+  <controller name="c1" pages="0,,1," selected="0"/>
+  <displayList>
+    <component id="n0_lpwh" name="frame" src="k1sm2n" xy="0,0" size="767,400">
+      <relation target="" sidePair="width-width,height-height"/>
+    </component>
+    <text id="n1_lpwh" name="n1" xy="11,7" size="29,21" fontSize="12" color="#cccccc" text="角色"/>
+    <graph id="n13_iftz" name="n13" xy="4,38" size="305,357" alpha="0.17" type="rect" lineColor="#ffcccccc" fillColor="#ff000000">
+      <relation target="n2_lpwh" sidePair="width-width,height-height"/>
+    </graph>
+    <list id="n2_lpwh" name="listNpc" xy="4,38" size="305,357" overflow="scroll" lineGap="3" defaultItem="ui://rl5gnkttlpwh7k">
+      <relation target="" sidePair="height-height"/>
+    </list>
+    <component id="n4_lpwh" name="newNpc" src="qj2i3x" xy="49,6">
+      <Button title="新建角色"/>
+    </component>
+    <component id="n5_lpwh" name="delNpc" src="qj2i3x" xy="138,6">
+      <Button title="删除角色"/>
+    </component>
+    <graph id="n14_iftz" name="n14" xy="315,39" size="176,23" alpha="0.06" type="rect">
+      <relation target="n7_lpwh" sidePair="width-width"/>
+    </graph>
+    <text id="n7_lpwh" name="name" xy="315,39" size="176,23" fontSize="12" color="#ffffff" autoSize="none" text="">
+      <relation target="" sidePair="rightext-right"/>
+    </text>
+    <graph id="n9_lpwh" name="n9" xy="315,94" size="176,301" alpha="0.1" type="rect" lineColor="#ffffffff" fillColor="#ff000000">
+      <relation target="n12_lpwh" sidePair="left-left,top-top"/>
+      <relation target="n12_lpwh" sidePair="width-width,height-height"/>
+    </graph>
+    <component id="n11_lpwh" name="setTexturePack" src="qj2i3x" xy="315,68" size="176,25">
+      <relation target="n12_lpwh" sidePair="bottom-top,left-left"/>
+      <relation target="" sidePair="width-width"/>
+      <Button title="指定此角色的动作图片包"/>
+    </component>
+    <list id="n12_lpwh" name="listAction" xy="319,98" size="169,292" overflow="scroll" defaultItem="ui://rl5gnkttobjb7x">
+      <relation target="" sidePair="height-height,rightext-right"/>
+    </list>
+    <component id="n17_objb" name="right" src="objb7v" xy="495,38"/>
+    <component id="n18_ombt" name="editMode" src="qj2i45" xy="499,39" size="79,27" tooltips="勾选后可通过拖拽人物重新定义重心。">
+      <Button checked="true" title="中心点编辑模式" controller="c1" page="1"/>
+    </component>
+    <component id="n19_ombt" name="editAll" src="qj2i45" xy="659,39" size="79,27" tooltips="勾选后可同时编辑当前人物的所有动作的重心。">
+      <gearDisplay controller="c1" pages="1"/>
+      <Button title="编辑全部动作"/>
+    </component>
+  </displayList>
+</component>

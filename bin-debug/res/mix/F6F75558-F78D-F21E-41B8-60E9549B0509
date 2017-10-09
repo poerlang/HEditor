@@ -1,0 +1,28 @@
+{
+	"keys": [
+		"金砖",
+		"jinzhuan",
+		"jz",
+		"金砖",
+		"jinzhuan",
+		"jz"
+	],
+	"ins": [
+		{
+			"name": "金砖",
+			"num": 3,
+			"level": 1
+		}
+	],
+	"tags": [
+		"技能"
+	],
+	"name": "F6F75558-F78D-F21E-41B8-60E9549B0509",
+	"outs": [
+		{
+			"name": "金砖",
+			"num": 1,
+			"level": 2
+		}
+	]
+}

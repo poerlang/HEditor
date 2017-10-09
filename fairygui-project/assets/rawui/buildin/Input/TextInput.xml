@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="117,36" extention="Label">
+  <controller name="grayed" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n0" name="n0" src="qj2i4p" xy="0,0" size="117,36">
+      <gearDisplay controller="grayed" pages="0"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n4" name="n4" src="qj2i4q" xy="0,0" size="117,36">
+      <gearDisplay controller="grayed" pages="1"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n1" name="title" xy="1,5" size="115,37" input="true" fontSize="12" color="#bdbdbd" align="center" leading="0" autoSize="none" singleLine="true" text="">
+      <gearColor controller="grayed" pages="1" values="#787b7b,#000000" default="#bdbdbd,#000000"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+  </displayList>
+</component>

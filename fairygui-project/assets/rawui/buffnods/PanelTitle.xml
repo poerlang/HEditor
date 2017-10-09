@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="153,27">
+  <displayList>
+    <image id="n0" name="n0" src="kbos3a" xy="0,0" size="152,27">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <component id="n2" name="title" src="qj2i45" xy="5,4" size="72,19">
+      <relation target="" sidePair=""/>
+      <Button checked="true"/>
+    </component>
+  </displayList>
+</component>

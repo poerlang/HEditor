@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="126,28">
+  <controller name="c1" pages="0,,1," selected="0"/>
+  <displayList>
+    <graph id="n4" name="n4" xy="0,0" size="126,28" alpha="0.02" type="rect">
+      <gearDisplay controller="c1" pages="0,1"/>
+      <gearLook controller="c1" pages="0,1" values="0.02,0,0,1|0.42,0,0,1"/>
+      <relation target="" sidePair="height-height,width-width"/>
+    </graph>
+    <graph id="n1" name="bg" xy="0,0" size="126,28" type="rect" fillColor="#5e000000">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <text id="n0" name="title" xy="4,0" size="120,28" font="Verdana" fontSize="12" color="#999999" vAlign="middle" autoSize="none" text="">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+    <graph id="n3" name="touch" xy="0,0" size="123,28" type="rect" lineColor="#00000000" fillColor="#00000000">
+      <relation target="" sidePair="left-left,rightext-right"/>
+    </graph>
+  </displayList>
+</component>
