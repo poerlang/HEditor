@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1200,813" bgColorEnabled="true" bgColor="#333333">
-  <controller name="addGoup" pages="0,hide,1,show" selected="0"/>
+  <controller name="addGoup" pages="0,hide,1,show" selected="1"/>
   <controller name="taglistGroup" pages="0,hide,1,show" selected="0"/>
   <controller name="mixSel" pages="0,hide,1,show" selected="0"/>
   <displayList>
@@ -45,13 +45,8 @@
       <Button checked="true" title="产出"/>
     </component>
     <list id="n202_ev8y" name="outlist" xy="282,100" size="674,57" layout="flow_hz" overflow="scroll" scrollBarFlags="84" margin="0,0,3,3" scrollBarRes="ui://rl5gnkttqj2i6t," defaultItem="ui://rl5gnkttev8y80"/>
-    <list id="n203_ev8y" name="inlist" xy="282,187" size="674,292" overflow="scroll" scrollBarFlags="4" margin="0,0,3,3" scrollBarRes="ui://rl5gnkttqj2i6t," defaultItem="ui://rl5gnkttev8y80">
+    <list id="n203_ev8y" name="inlist" xy="282,187" size="674,292" overflow="scroll" scrollBarFlags="4" margin="0,0,3,3" scrollBarRes="ui://rl5gnkttqj2i6t," defaultItem="ui://rl5gnkttev8y80" autoItemSize="false">
       <relation target="n173" sidePair="bottomext-top"/>
-      <item/>
-      <item/>
-      <item/>
-      <item/>
-      <item/>
     </list>
     <component id="n204_ev8y" name="toOut" src="qj2i3x" xy="498,485" size="58,25">
       <relation target="n173" sidePair="top-top"/>

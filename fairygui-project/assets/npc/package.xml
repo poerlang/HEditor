@@ -4,5 +4,5 @@
     <movieclip id="jo6a36" name="孙二娘_att1.jta" path="/孙二娘/" exported="true"/>
     <movieclip id="objb38" name="孙二娘_idle.jta" path="/孙二娘/" exported="true"/>
   </resources>
-  <publish name="npc" path="D:\BuffEditor\bin-debug\res\npc" packageCount="1"/>
+  <publish name="npc" path="e:\HEditor\bin-debug\res\npc" packageCount="1"/>
 </packageDescription>

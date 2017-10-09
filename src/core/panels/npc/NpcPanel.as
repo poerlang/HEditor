@@ -134,9 +134,9 @@ package core.panels.npc
 			}
 			pack = UIPackage.getByName(packName);
 			if(!pack){
-				GameEditor.ins.loadmgr.load([rPath],function():void{
+				HEditor.ins.loadmgr.load([rPath],function():void{
 					trace("贴图包["+rPath+"]加载完成");
-					UIPackage.addPackage(GameEditor.ins.loadmgr.get(rPath),null);
+					UIPackage.addPackage(HEditor.ins.loadmgr.get(rPath),null);
 					pack = UIPackage.getByName(packName);
 					pack.loadAllImages();
 					UIPackage.waitToLoadCompleted(whenTexureReady);
@@ -169,7 +169,7 @@ package core.panels.npc
 		private function findActionMovieInPack(npcName:String,pack:UIPackage):Array
 		{
 			var arr:Array = [];
-			var actionArr:Array = GameEditor.cfg.action;
+			var actionArr:Array = HEditor.cfg.action;
 			for (var i:int = 0; i < actionArr.length; i++) 
 			{
 				var actionName:String = npcName+"_"+actionArr[i];

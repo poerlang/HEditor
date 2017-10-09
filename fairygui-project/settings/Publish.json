@@ -1,7 +1,7 @@
 {
 	"codeGeneration":{
 		"classNamePrefix":"UI_",
-		"codePath":"d:\\BuffEditor\\src",
+		"codePath":"e:\\HEditor\\src",
 		"codeType":"AS3",
 		"getMemberByName":false,
 		"ignoreNoname":true,
@@ -10,5 +10,5 @@
 	},
 	"fileExtension":"gui",
 	"packageCount":2,
-	"path":"D:\\BuffEditor\\bin-debug\\res"
+	"path":"e:\\HEditor\\bin-debug\\res"
 }

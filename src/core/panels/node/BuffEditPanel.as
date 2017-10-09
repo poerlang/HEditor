@@ -185,7 +185,7 @@ package core.panels.node
 			this.now = n;
 			panels.removeChildrenToPool(0,-1);
 			panelsDic = {};
-			var arr:Array = GameEditor.nodeConfig.all[n.name];
+			var arr:Array = HEditor.nodeConfig.all[n.name];
 			clearAllProp();
 			if(arr){
 				for (var i:int = 0; i < arr.length; i++){
@@ -219,7 +219,7 @@ package core.panels.node
 			var str:String = JSON.stringify(ob,null,"\t");
 			
 			
-			FileX.stringToFile(str,GameEditor.resOutput+"res/buff/"+fname);
+			FileX.stringToFile(str,HEditor.resOutput+"res/buff/"+fname);
 			setTimeout(addBuffFiles,37);
 			//setTimeout(merge,133);
 			setTimeout(function():void{
@@ -245,8 +245,8 @@ package core.panels.node
 			}
 			var stringify:String = JSON.stringify({buff:tmp},null,"\t");
 			var stringify_forServer:String = JSON.stringify({buff:tmpForServer},null,"\t");
-			FileX.stringToFile(stringify,GameEditor.resOutput+"res/buffs.json");
-			FileX.stringToFile(stringify_forServer,GameEditor.resOutputForServer+"res/buffs.json");
+			FileX.stringToFile(stringify,HEditor.resOutput+"res/buffs.json");
+			FileX.stringToFile(stringify_forServer,HEditor.resOutputForServer+"res/buffs.json");
 		}
 	}
 }

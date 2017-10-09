@@ -184,10 +184,9 @@
     <component id="gawt85" name="TagList.xml" path="/buildin/Checkbox/"/>
     <component id="gawt86" name="ButtonToggleWithCheck.xml" path="/buildin/Button/" exported="true"/>
     <component id="gawt87" name="ButtonToggle.xml" path="/buildin/Button/"/>
-    <component id="z51b88" name="beziContainer.xml" path="/"/>
-    <component id="z51b89" name="lineContainer.xml" path="/"/>
+    <component id="z51b88" name="BeziContainer.xml" path="/nodes/" exported="true"/>
   </resources>
-  <publish name="rawui" path="D:\BuffEditor\bin-debug\res" packageCount="2" genCode="true">
+  <publish name="rawui" path="e:\HEditor\bin-debug\res" packageCount="2" genCode="true">
     <atlas name="默认" index="0"/>
   </publish>
 </packageDescription>

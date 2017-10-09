@@ -66,13 +66,13 @@ package core.panels.base
 		protected function onBrowse():void
 		{
 			var appDir:File = File.applicationDirectory;
-			var sub:File = appDir.resolvePath(GameEditor.res+dir+"/");
+			var sub:File = appDir.resolvePath(HEditor.res+dir+"/");
 			sub.browse();
 			sub.addEventListener(Event.SELECT,function(e:Event):void{
 				var f:File = e.target as File;
 				val = f.name;
-				var res:String = GameEditor.res;
-				var res2:String = GameEditor.resOutput;
+				var res:String = HEditor.res;
+				var res2:String = HEditor.resOutput;
 				var replace:String = f.nativePath.replace(/\\/g,"/").replace(res,"").replace(res2,"");
 				if(noPath)replace = f.name;
 				if(noExt && f.extension)replace = f.name.replace(f.extension,"");

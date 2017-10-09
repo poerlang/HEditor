@@ -21,11 +21,11 @@ package
 	
 	import rawui.rawuiBinder;
 	
-	public class GameEditor extends Sprite
+	public class HEditor extends Sprite
 	{
 		public var loadmgr:LoadManager = new LoadManager();
 		private var ticks:Array = [];
-		public static var ins:GameEditor;
+		public static var ins:HEditor;
 		
 		public static var res:String = "";
 		public static var resOutput:String = "";
@@ -36,7 +36,7 @@ package
 		public static var tag:Object;
 		public static var nodeConfig:Object;
 		
-		public function GameEditor()
+		public function HEditor()
 		{
 			ins = this;
 			stage.scaleMode = StageScaleMode.NO_SCALE;

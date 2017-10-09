@@ -42,7 +42,7 @@ package rawui
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_TextInput.URL, UI_TextInput);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_NumericInput.URL, UI_NumericInput);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_LabelCombox.URL, UI_LabelCombox);
-			fairygui.UIObjectFactory.setPackageItemExtension(UI_beziContainer.URL, UI_beziContainer);
+			fairygui.UIObjectFactory.setPackageItemExtension(UI_BeziContainer.URL, UI_BeziContainer);
 		}
 	}
 }

@@ -9,6 +9,7 @@ package bind
 	import core.panels.base.LabelInput;
 	import core.panels.base.NumericInput;
 	import core.panels.base.TextInput;
+	import core.panels.node.BeziContainer;
 	import core.panels.node.MixItem;
 	import core.panels.node.StuffItem;
 	import core.panels.npc.items.NpcItem;
@@ -16,6 +17,7 @@ package bind
 	
 	import fairygui.UIObjectFactory;
 	
+	import rawui.UI_BeziContainer;
 	import rawui.UI_LabelCombox;
 	import rawui.UI_LabelFile;
 	import rawui.UI_LabelInput;
@@ -28,7 +30,6 @@ package bind
 	import rawui.UI_PropGroupUI;
 	import rawui.UI_StuffItem;
 	import rawui.UI_TextInput;
-	import rawui.UI_TextInputSmall;
 
 	public class RealUIBinder
 	{
@@ -46,6 +47,7 @@ package bind
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_MixItem.URL, MixItem);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_StuffItem.URL, StuffItem);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_TextInput.URL, TextInput);
+			fairygui.UIObjectFactory.setPackageItemExtension(UI_BeziContainer.URL, BeziContainer);
 		}
 	}
 }

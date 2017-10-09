@@ -10,6 +10,8 @@ package rawui
 		public var m_c1:Controller;
 		public var m_level:GTextField;
 		public var m_num:GTextField;
+		public var m_beziBg:GGraph;
+		public var m_bezi:UI_BeziContainer;
 
 		public static const URL:String = "ui://rl5gnkttev8y80";
 
@@ -30,6 +32,8 @@ package rawui
 			m_c1 = this.getControllerAt(2);
 			m_level = GTextField(this.getChildAt(3));
 			m_num = GTextField(this.getChildAt(4));
+			m_beziBg = GGraph(this.getChildAt(5));
+			m_bezi = UI_BeziContainer(this.getChildAt(6));
 		}
 	}
 }

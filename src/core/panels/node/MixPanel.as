@@ -14,14 +14,11 @@ package core.panels.node
 	
 	import fairygui.GComponent;
 	import fairygui.GList;
-	import fairygui.GObject;
 	import fairygui.Window;
 	import fairygui.event.GTouchEvent;
 	import fairygui.event.ItemEvent;
 	
 	import rawui.UI_BufferFileItem;
-	import rawui.UI_ButtonT;
-	import rawui.UI_ButtonToggle;
 	import rawui.UI_ButtonToggleWithCheck;
 	import rawui.UI_MixItem;
 	import rawui.UI_MixPanel;
@@ -135,7 +132,7 @@ package core.panels.node
 		
 		private function reloadTags():void
 		{
-			var tag:Object = GameEditor.tag;
+			var tag:Object = HEditor.tag;
 			var list:GList = v.m_taglist.m_list;
 			for(var key:String in tag) 
 			{
@@ -351,7 +348,7 @@ package core.panels.node
 				one = ob.ins[i];
 				item = v.m_inlist.addItemFromPool(UI_StuffItem.URL) as StuffItem;
 				item.data = one;
-				updateInOutItem(item);
+				updateInItem(item);
 				real = StuffManager.ins.get(one.name);
 				if(!real){
 					item.alpha = 0.5;
@@ -362,7 +359,7 @@ package core.panels.node
 				one = ob.outs[j];
 				item = v.m_outlist.addItemFromPool(UI_StuffItem.URL) as StuffItem;
 				item.data = one;
-				updateInOutItem(item);
+				updateOutItem(item);
 				real = StuffManager.ins.get(one.name);
 				if(!real){
 					item.alpha = 0.5;
@@ -409,8 +406,8 @@ package core.panels.node
 			}
 			var stringify:String = JSON.stringify({buff:tmp},null,"\t");
 			var stringify_forServer:String = JSON.stringify({buff:tmpForServer},null,"\t");
-			FileX.stringToFile(stringify,GameEditor.resOutput+"res/buffs.json");
-			FileX.stringToFile(stringify_forServer,GameEditor.resOutputForServer+"res/buffs.json");
+			FileX.stringToFile(stringify,HEditor.resOutput+"res/buffs.json");
+			FileX.stringToFile(stringify_forServer,HEditor.resOutputForServer+"res/buffs.json");
 		}
 		
 		private function onBgClick(e):void
@@ -497,7 +494,7 @@ package core.panels.node
 			this.now = n;
 			panels.removeChildrenToPool(0,-1);
 			panelsDic = {};
-			var arr:Array = GameEditor.nodeConfig.all[n.name];
+			var arr:Array = HEditor.nodeConfig.all[n.name];
 			clearAllProp();
 			if(arr){
 				for (var i:int = 0; i < arr.length; i++){
@@ -627,7 +624,7 @@ package core.panels.node
 			var ob:Object = GameMathUtil.clone(stuffSel.data);
 			var i:StuffItem = v.m_inlist.addItemFromPool(UI_StuffItem.URL) as StuffItem;
 			i.data = ob;
-			updateInOutItem(i);
+			updateInItem(i);
 		}
 		
 		private function toOut(e):void
@@ -639,9 +636,21 @@ package core.panels.node
 			var ob:Object = GameMathUtil.clone(stuffSel.data);
 			var i:StuffItem = v.m_outlist.addItemFromPool(UI_StuffItem.URL) as StuffItem;
 			i.data = ob;
-			updateInOutItem(i);
+			updateOutItem(i);
 		}
 		
+		private function updateInItem(i:StuffItem):void{
+			updateInOutItem(i);
+			i.m_c1.selectedIndex = 2;
+			i.width = v.m_inlist.width-i.x-5;
+			i.height = 133;
+		}
+		private function updateOutItem(i:StuffItem):void{
+			updateInOutItem(i);
+			i.m_c1.selectedIndex = 1;
+			i.width = 112;
+			i.height = 40;
+		}
 		private function updateInOutItem(i:StuffItem):void
 		{
 			i.alpha = 1;
@@ -649,7 +658,6 @@ package core.panels.node
 			i.title = ob.name;
 			i.m_level.text = "等级 "+ob.level;
 			i.m_num.text = "× "+ob.num;
-			i.m_c1.selectedIndex = 1;
 		}
 		
 		private function updateOneMix(ob:Object, i:MixItem):void

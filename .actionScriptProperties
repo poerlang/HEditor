@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<actionScriptProperties analytics="false" mainApplicationPath="GameEditor.as" projectUUID="0bf3c2be-b510-47d3-b94c-39e61a82817b" version="11">
+<actionScriptProperties analytics="false" mainApplicationPath="HEditor.as" projectUUID="0bf3c2be-b510-47d3-b94c-39e61a82817b" version="11">
   <compiler additionalCompilerArguments="-locale en_US" advancedTelemetry="false" autoRSLOrdering="true" copyDependentFiles="true" fteInMXComponents="false" generateAccessible="false" htmlExpressInstall="true" htmlGenerate="false" htmlHistoryManagement="false" htmlPlayerVersionCheck="true" includeNetmonSwc="false" outputFolderPath="bin-debug" removeUnusedRSL="true" sourceFolderPath="src" strict="true" targetPlayerVersion="0.0.0" useApolloConfig="true" useDebugRSLSwfs="true" useFlashSDK="true" verifyDigests="true" warn="true">
     <compilerSourcePath>
       <compilerSourcePathEntry kind="1" linkType="1" path="libsrc"/>
@@ -40,10 +40,10 @@
     <application path="BuffEidtor.as">
       <airExcludes/>
     </application>
-    <application path="GameEditor.as">
+    <application path="BuffEditor.as">
       <airExcludes/>
     </application>
-    <application path="BuffEditor.as">
+    <application path="HEditor.as">
       <airExcludes/>
     </application>
   </applications>
