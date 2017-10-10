@@ -24,10 +24,11 @@ package core.panels.node
 		protected override function constructFromXML(xml:XML):void
 		{
 			super.constructFromXML(xml);
-			
+			saveCtrlPos();
 			m_bg.addEventListener(MouseEvent.MOUSE_DOWN,onDown);
 			m_bg.addEventListener(MouseEvent.MOUSE_MOVE,onMove);
 			m_bg.addEventListener(MouseEvent.MOUSE_UP,onUp);
+			m_bg.addEventListener(MouseEvent.RELEASE_OUTSIDE,onUp);
 			m_line.touchable = m_o1.touchable = m_o2.touchable = m_o3.touchable = m_o4.touchable = false;
 			b = new BezSprite();
 			m_line.setNativeObject(b);
@@ -35,11 +36,22 @@ package core.panels.node
 			initPos();
 		}
 		
+		public function onSizeChange():void{
+			initPos();
+			draw();
+		}
 		public function initPos():void
 		{
 			m_o1.x = 0;
 			m_o4.x = width;
 			m_o4.y = 0;
+			if(ctrlPosArr){
+				m_o1.y = ctrlPosArr[0][1]*height;
+				m_o2.x = ctrlPosArr[1][0]*width;
+				m_o2.y = ctrlPosArr[1][1]*height;
+				m_o3.x = ctrlPosArr[2][0]*width;
+				m_o3.y = ctrlPosArr[2][1]*height;
+			}
 		}
 		private function draw(getNums:Boolean=false):Array
 		{
@@ -86,34 +98,22 @@ package core.panels.node
 		{
 			if(!drag) return;
 			var index:Number = parseInt(drag.name.slice(1));
-//			if(!isNaN(index)){
-//				saveCurve(index);
-//			}
-//			if(drag!=v.m_container.m_mid){
-//				points = draw(true);
-				points = draw(true);
-//			}
-//			v.m_container.m_levelNow.text = "等级: "+Math.round(parseFloat(v.m_maxLevel.text)*v.m_container.m_mid.x/434);
+			points = draw(true);
 			drag = null;
-//			if(points && points.length){
-//				var yy:int = walk(v.m_container.m_mid.x);
-//				if(isNaN(yy))return;
-//				var maxNum:Number = parseFloat(v.m_maxNum.text);
-//				v.m_container.m_numNow.text = "当前等级对应值: "+Math.round((1-yy/448)*maxNum);
-//			}
-			
-//			var lvl:Number = parseFloat(v.m_maxLevel.text);
-//			nums = [];
-//			if(points && points.length>0 && lvl>1){
-//				for (var i:int = 0; i <= lvl; i++) 
-//				{
-//					var xx:Number = i/lvl*434;
-//					var yyyy:Number = walk(xx);
-//					var tmp:int = Math.round((1-yyyy/448)*maxNum);
-//					nums.push(tmp);
-//				}
-//				curveNow.num = nums.slice();
-//			}
+			saveCtrlPos();
+		}
+		private var ctrlPosArr:Array;
+		private function saveCtrlPos():void
+		{
+			ctrlPosArr = [];
+			var w:Number = width;
+			var h:Number = height;
+			var arr:Array = [m_o1,m_o2,m_o3];
+			for (var i:int = 0; i < arr.length; i++) 
+			{
+				var o:GObject = arr[i] as GObject;
+				ctrlPosArr.push([o.x/w,o.y/h]);
+			}
 		}
 	}
 }

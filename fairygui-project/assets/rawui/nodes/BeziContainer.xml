@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="305,32" overflow="hidden">
   <displayList>
-    <graph id="n0_z51b" name="bg" xy="0,0" size="305,32" alpha="0.08" type="rect" lineSize="0" fillColor="#ffcccccc">
+    <graph id="n0_z51b" name="bg" xy="0,0" size="305,32" alpha="0.04" type="rect" lineSize="0" fillColor="#ffcccccc">
       <relation target="" sidePair="width-width,height-height"/>
     </graph>
     <graph id="n6_yull" name="line" xy="0,0" size="305,32" touchable="false" type="rect" lineSize="0" fillColor="#ff000000">
       <relation target="" sidePair="width-width,height-height"/>
     </graph>
-    <image id="n1_z51b" name="o1" src="qj2i59" xy="0,32" pivot="0,0.8" anchor="true"/>
-    <image id="n2_z51b" name="o2" src="qj2i59" xy="43,14" pivot="0.5,0.4" anchor="true"/>
-    <image id="n3_z51b" name="o3" src="qj2i59" xy="147,4" pivot="0.5,0.4" anchor="true"/>
-    <image id="n4_z51b" name="o4" src="qj2i59" xy="305,1" pivot="1,0.2" anchor="true"/>
+    <image id="n1_z51b" name="o1" src="qj2i59" xy="0,32" pivot="0.4,0.5" anchor="true"/>
+    <image id="n2_z51b" name="o2" src="qj2i59" xy="183,24" pivot="0.5,0.4" anchor="true"/>
+    <image id="n3_z51b" name="o3" src="qj2i59" xy="281,14" pivot="0.5,0.4" anchor="true"/>
+    <image id="n4_z51b" name="o4" src="qj2i59" xy="305,1" pivot="0.6,0.4" anchor="true"/>
   </displayList>
 </component>

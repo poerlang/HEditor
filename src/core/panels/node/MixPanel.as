@@ -4,8 +4,10 @@ package core.panels.node
 	import com.topdevil.nodes.PropGroupUI;
 	
 	import flash.events.MouseEvent;
+	import flash.geom.Rectangle;
 	import flash.ui.Keyboard;
 	import flash.utils.Dictionary;
+	import flash.utils.setTimeout;
 	
 	import core.panels.base.Alert;
 	import core.panels.base.AlertInput;
@@ -13,6 +15,7 @@ package core.panels.node
 	import core.panels.base.NumericInput;
 	
 	import fairygui.GComponent;
+	import fairygui.GGraph;
 	import fairygui.GList;
 	import fairygui.Window;
 	import fairygui.event.GTouchEvent;
@@ -20,6 +23,7 @@ package core.panels.node
 	
 	import rawui.UI_BufferFileItem;
 	import rawui.UI_ButtonToggleWithCheck;
+	import rawui.UI_LevelPosDrager;
 	import rawui.UI_MixItem;
 	import rawui.UI_MixPanel;
 	import rawui.UI_PropGroupUI;
@@ -54,6 +58,9 @@ package core.panels.node
 			v.m_outlist.addEventListener(ItemEvent.CLICK,onOutListItemClick);
 			v.m_inlist.addEventListener(ItemEvent.CLICK,onInListItemClick);
 			v.m_mixlist.addEventListener(ItemEvent.CLICK,onMixListItemClick);
+			
+			var drager:UI_LevelPosDrager = v.m_levelpos.m_drager;
+			
 			v.addEventListener(MouseEvent.MOUSE_DOWN,onT);
 			v.m_newMix.addClickListener(createMix);
 			v.m_toOut.addClickListener(toOut);
@@ -81,7 +88,7 @@ package core.panels.node
 			num = v.m_num as NumericInput;
 			level.toFixedNum = 0;
 			num.toFixedNum = 0;
-			refreshStuffList();
+			reloadStuffList();
 			reloadAllMix();
 			reloadTags();
 			v.m_taglist.m_bg2.addClickListener(function(e):void{
@@ -510,10 +517,11 @@ package core.panels.node
 			updateInOutItem(addSubTarget);
 		}
 		
-		private function onRefreshOneStuff(ob:Object,item:StuffItem):void
+		private function updateOneStuff(ob:Object,item:StuffItem):void
 		{
 			item.title = ob.name;
 			item.data = ob;
+			item.width = 122;
 			StuffManager.ins.add(ob);
 			item.m_c1.selectedIndex = 0;
 		}
@@ -551,11 +559,11 @@ package core.panels.node
 				{
 					var m:StuffItem = v.m_stufflist.addItemFromPool(UI_StuffItem.URL) as StuffItem;
 					var o:Object = arr[j];
-					onRefreshOneStuff(o,m);
+					updateOneStuff(o,m);
 				}
 				
 			}else{
-				refreshStuffList();
+				reloadStuffList();
 			}
 		}
 		private function onT(t:MouseEvent):void
@@ -563,10 +571,10 @@ package core.panels.node
 			regKeys();
 		}
 		
-		private function refreshStuffList():void
+		private function reloadStuffList():void
 		{
 			v.m_stufflist.removeChildrenToPool();
-			FileX.dirToList(STUFF_DIR,v.m_stufflist,UI_StuffItem.URL,onRefreshOneStuff);
+			FileX.dirToList(STUFF_DIR,v.m_stufflist,UI_StuffItem.URL,updateOneStuff);
 		}
 		
 		private function reloadAllMix():void
@@ -625,6 +633,7 @@ package core.panels.node
 			var i:StuffItem = v.m_inlist.addItemFromPool(UI_StuffItem.URL) as StuffItem;
 			i.data = ob;
 			updateInItem(i);
+			//setTimeout(i.changeBeziBox,1000);
 		}
 		
 		private function toOut(e):void
@@ -642,8 +651,10 @@ package core.panels.node
 		private function updateInItem(i:StuffItem):void{
 			updateInOutItem(i);
 			i.m_c1.selectedIndex = 2;
-			i.width = v.m_inlist.width-i.x-5;
+			i.width = v.m_inlist.width-i.x-8;
 			i.height = 133;
+			i.width;
+			i.changeBeziBox();
 		}
 		private function updateOutItem(i:StuffItem):void{
 			updateInOutItem(i);

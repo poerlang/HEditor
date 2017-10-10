@@ -10,6 +10,7 @@ package bind
 	import core.panels.base.NumericInput;
 	import core.panels.base.TextInput;
 	import core.panels.node.BeziContainer;
+	import core.panels.node.LevelPos;
 	import core.panels.node.MixItem;
 	import core.panels.node.StuffItem;
 	import core.panels.npc.items.NpcItem;
@@ -21,6 +22,7 @@ package bind
 	import rawui.UI_LabelCombox;
 	import rawui.UI_LabelFile;
 	import rawui.UI_LabelInput;
+	import rawui.UI_LevelPos;
 	import rawui.UI_MixItem;
 	import rawui.UI_NodeContainer;
 	import rawui.UI_NodeItem;
@@ -44,6 +46,7 @@ package bind
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_PropGroupUI.URL, PropGroupUI);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_NpcItem.URL, NpcItem);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_Npc.URL, Npc);
+			fairygui.UIObjectFactory.setPackageItemExtension(UI_LevelPos.URL, LevelPos);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_MixItem.URL, MixItem);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_StuffItem.URL, StuffItem);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_TextInput.URL, TextInput);

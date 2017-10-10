@@ -37,6 +37,8 @@ package rawui
 		public var m_num:UI_NumericInput;
 		public var m_addGroup:GGroup;
 		public var m_taglist:UI_TagList;
+		public var m_hasLevel:GButton;
+		public var m_levelpos:UI_LevelPos;
 
 		public static const URL:String = "ui://rl5gnkttijaf7y";
 
@@ -84,6 +86,8 @@ package rawui
 			m_num = UI_NumericInput(this.getChildAt(34));
 			m_addGroup = GGroup(this.getChildAt(35));
 			m_taglist = UI_TagList(this.getChildAt(36));
+			m_hasLevel = GButton(this.getChildAt(37));
+			m_levelpos = UI_LevelPos(this.getChildAt(38));
 		}
 	}
 }

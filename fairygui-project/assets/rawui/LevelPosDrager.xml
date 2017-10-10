@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="14,57">
+  <displayList>
+    <image id="n235_xay5" name="n235" src="qj2i4h" xy="0,0"/>
+    <graph id="n236_xay5" name="line" xy="7,10" size="1,47" alpha="0.17" type="rect" lineSize="0" fillColor="#ffffcc99">
+      <relation target="" sidePair="bottomext-bottom"/>
+    </graph>
+  </displayList>
+</component>

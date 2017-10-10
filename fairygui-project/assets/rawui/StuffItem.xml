@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="122,40" overflow="hidden" extention="Button">
+<component size="152,40" extention="Button">
   <controller name="button" pages="0,up,1,down" selected="0"/>
   <controller name="grayedC" pages="0,,1," selected="0"/>
-  <controller name="c1" pages="0,,1,,2," selected="1"/>
+  <controller name="c1" pages="0,,1,,2," selected="2"/>
   <displayList>
-    <image id="n1" name="n1" src="qj2i3y" xy="0,0" size="122,40" aspect="true">
+    <image id="n1" name="n1" src="qj2i3y" xy="0,0" size="152,40" aspect="true">
       <gearDisplay controller="button" pages="0"/>
       <gearColor controller="grayedC" pages="1" values="#efefef" default="#ffffff"/>
       <relation target="" sidePair="width-width,height-height"/>
     </image>
-    <image id="n2" name="n2" src="qj2i3z" xy="0,0" size="122,40" aspect="true">
+    <image id="n2" name="n2" src="qj2i3z" xy="0,0" size="152,40" aspect="true">
       <gearDisplay controller="button" pages="1,3"/>
       <relation target="" sidePair="width-width,height-height"/>
     </image>
@@ -19,21 +19,58 @@
       <gearColor controller="grayedC" pages="0,1" values="#ffffff,#000000|#999999,#000000"/>
     </text>
     <text id="n6_wap5" name="level" xy="1,19" size="61,20" alpha="0.55" fontSize="11" color="#00cc00" autoSize="none" text="">
-      <gearDisplay controller="c1" pages="1"/>
+      <gearDisplay controller="c1" pages="1,2"/>
       <gearLook controller="button" pages="0" values="0.55,0,0,1" default="1,0,0,1"/>
     </text>
     <text id="n8_wap5" name="num" xy="57,19" size="61,20" alpha="0.55" fontSize="11" color="#ffff00" align="right" autoSize="none" text="">
-      <gearDisplay controller="c1" pages="1"/>
+      <gearDisplay controller="c1" pages="1,2"/>
       <gearLook controller="button" pages="0" values="0.55,0,0,1" default="1,0,0,1"/>
     </text>
-    <graph id="n11_yull" name="beziBg" xy="117,3" size="1,33" type="rect" lineSize="0" lineColor="#ff669900" fillColor="#ff333333">
+    <graph id="n11_yull" name="beziBg" xy="135,3" size="1,33" type="rect" lineSize="0" lineColor="#ff669900" fillColor="#ff333333">
       <gearDisplay controller="c1" pages="2"/>
       <relation target="" sidePair="rightext-right,height-height"/>
     </graph>
-    <component id="n9_z51b" name="bezi" src="z51b88" xy="121,4" size="305,31" hideByEditor="true">
+    <component id="n9_z51b" name="bezi" src="z51b88" xy="135,4" size="305,31" hideByEditor="true">
       <gearDisplay controller="c1" pages="2"/>
       <relation target="n11_yull" sidePair="height-height"/>
     </component>
+    <graph id="n12_xay5" name="beziStart" xy="111,0" size="15,39" alpha="0" type="rect">
+      <gearDisplay controller="c1" pages="2"/>
+      <relation target="" sidePair="height-height"/>
+    </graph>
+    <graph id="n15_xay5" name="beziEnd" xy="140,0" size="15,39" alpha="0" type="rect">
+      <gearDisplay controller="c1" pages="2"/>
+      <relation target="" sidePair="height-height,right-right"/>
+    </graph>
+    <component id="n13_xay5" name="dragStart" src="xay58a" xy="122,0" size="15,39" alpha="0.33">
+      <gearDisplay controller="c1" pages="2"/>
+      <relation target="n9_z51b" sidePair="left-left"/>
+      <relation target="" sidePair="height-height"/>
+    </component>
+    <component id="n14_xay5" name="dragEnd" src="xay589" xy="440,0" size="14,39" alpha="0.33">
+      <gearDisplay controller="c1" pages="2"/>
+      <relation target="n9_z51b" sidePair="left-right"/>
+      <relation target="" sidePair="height-height"/>
+    </component>
+    <component id="n16_xay5" name="addLevel" src="wap583" xy="97,50" size="19,16" group="n24_xay5">
+      <Button icon="ui://rl5gnkttqj2i5g"/>
+    </component>
+    <component id="n17_xay5" name="subLevel" src="wap584" xy="97,66" size="19,16" group="n24_xay5">
+      <Button icon="ui://rl5gnkttqj2i5j"/>
+    </component>
+    <component id="n18_xay5" name="addNum" src="wap583" xy="97,88" size="19,16" group="n24_xay5">
+      <Button icon="ui://rl5gnkttqj2i5g"/>
+    </component>
+    <component id="n19_xay5" name="subNum" src="wap584" xy="97,104" size="19,16" group="n24_xay5">
+      <Button icon="ui://rl5gnkttqj2i5j"/>
+    </component>
+    <text id="n20_xay5" name="n20" xy="2,43" size="40,20" group="n24_xay5" fontSize="10" color="#666666" autoSize="none" text="max"/>
+    <text id="n21_xay5" name="n21" xy="2,80" size="40,20" group="n24_xay5" fontSize="10" color="#666666" autoSize="none" text="min"/>
+    <component id="n22_xay5" name="max" src="qj2i6i" xy="2,57" size="94,20" group="n24_xay5"/>
+    <component id="n23_xay5" name="min" src="qj2i6i" xy="2,94" size="94,20" group="n24_xay5"/>
+    <group id="n24_xay5" name="minMaxGroup" xy="2,43" size="114,77" advanced="true" collapsed="true">
+      <gearDisplay controller="c1" pages="2"/>
+    </group>
   </displayList>
   <Button mode="Radio"/>
 </component>

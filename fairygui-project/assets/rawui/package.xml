@@ -185,6 +185,10 @@
     <component id="gawt86" name="ButtonToggleWithCheck.xml" path="/buildin/Button/" exported="true"/>
     <component id="gawt87" name="ButtonToggle.xml" path="/buildin/Button/"/>
     <component id="z51b88" name="BeziContainer.xml" path="/nodes/" exported="true"/>
+    <component id="xay589" name="DragEnd.xml" path="/com/"/>
+    <component id="xay58a" name="DragStart.xml" path="/com/"/>
+    <component id="xay58b" name="LevelPos.xml" path="/" exported="true"/>
+    <component id="xay58c" name="LevelPosDrager.xml" path="/"/>
   </resources>
   <publish name="rawui" path="e:\HEditor\bin-debug\res" packageCount="2" genCode="true">
     <atlas name="默认" index="0"/>
