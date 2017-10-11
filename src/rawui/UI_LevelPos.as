@@ -6,6 +6,7 @@ package rawui
 
 	public class UI_LevelPos extends GComponent
 	{
+		public var m_bg:GGraph;
 		public var m_drager:UI_LevelPosDrager;
 		public var m_dragBounds:GGraph;
 
@@ -24,6 +25,7 @@ package rawui
 		{
 			super.constructFromXML(xml);
 
+			m_bg = GGraph(this.getChildAt(0));
 			m_drager = UI_LevelPosDrager(this.getChildAt(1));
 			m_dragBounds = GGraph(this.getChildAt(2));
 		}

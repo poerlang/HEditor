@@ -36,3 +36,4 @@ HEditor 下面简称 HE ，用于实时调整和预览 H5 游戏的技能，以�
 >>暂定先支持 Laya 2D，后面如果有时间，加入 Egret 3D支持，或者 three.js。
 
 
+![部分界面截图](https://github.com/moketao/HEditor/raw/master/snap/snap.png)

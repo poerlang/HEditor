@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="581,19">
   <displayList>
-    <graph id="n234_xay5" name="n234" xy="0,0" size="581,19" alpha="0.03" type="rect">
+    <graph id="n234_xay5" name="bg" xy="0,0" size="581,19" alpha="0.03" type="rect">
       <relation target="" sidePair="width-width,height-height"/>
     </graph>
-    <component id="n235_xay5" name="drager" src="xay58c" xy="5,2" size="14,311"/>
-    <graph id="n236_xay5" name="dragBounds" xy="11,8" size="559,1" visible="false" type="rect" lineSize="0"/>
+    <component id="n235_xay5" name="drager" src="xay58c" xy="11,11" size="14,304"/>
+    <graph id="n236_xay5" name="dragBounds" xy="11,12" size="559,1" visible="false" type="rect" lineSize="0">
+      <relation target="" sidePair="width-width"/>
+    </graph>
   </displayList>
 </component>

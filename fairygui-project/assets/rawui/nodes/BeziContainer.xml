@@ -11,5 +11,6 @@
     <image id="n2_z51b" name="o2" src="qj2i59" xy="183,24" pivot="0.5,0.4" anchor="true"/>
     <image id="n3_z51b" name="o3" src="qj2i59" xy="281,14" pivot="0.5,0.4" anchor="true"/>
     <image id="n4_z51b" name="o4" src="qj2i59" xy="305,1" pivot="0.6,0.4" anchor="true"/>
+    <image id="n8_nalx" name="oo" src="qj2i5c" xy="227,54" pivot="0.5,0.5" anchor="true" alpha="0.64"/>
   </displayList>
 </component>

@@ -3,14 +3,16 @@ package core.panels.node
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.geom.Point;
+	import flash.utils.setTimeout;
 	
 	import fairygui.GObject;
+	import fairygui.GRoot;
 	
 	import rawui.UI_BeziContainer;
 	
 	public class BeziContainer extends UI_BeziContainer
 	{
-		private var b:BezSprite;
+		private var b:BeziSprite;
 		private static var pos:Point = new Point();
 		private static var tmp:Point = new Point();
 		private var drag:GObject;
@@ -26,11 +28,10 @@ package core.panels.node
 			super.constructFromXML(xml);
 			saveCtrlPos();
 			m_bg.addEventListener(MouseEvent.MOUSE_DOWN,onDown);
-			m_bg.addEventListener(MouseEvent.MOUSE_MOVE,onMove);
 			m_bg.addEventListener(MouseEvent.MOUSE_UP,onUp);
 			m_bg.addEventListener(MouseEvent.RELEASE_OUTSIDE,onUp);
 			m_line.touchable = m_o1.touchable = m_o2.touchable = m_o3.touchable = m_o4.touchable = false;
-			b = new BezSprite();
+			b = new BeziSprite();
 			m_line.setNativeObject(b);
 			pointsNeedCtrl = [m_o1,m_o2,m_o3];//选择起始点和两个控制点 (终点不受控)
 			initPos();
@@ -53,13 +54,13 @@ package core.panels.node
 				m_o3.y = ctrlPosArr[2][1]*height;
 			}
 		}
-		private function draw(getNums:Boolean=false):Array
+		private function draw(getNums:Boolean=false,needPointNum:int=100):Array
 		{
 			var p0:Point = new Point(m_o1.x,m_o1.y);
 			var p1:Point = new Point(m_o2.x,m_o2.y);
 			var p2:Point = new Point(m_o3.x,m_o3.y);
 			var p3:Point = new Point(m_o4.x,m_o4.y);
-			var drawArr:Array = b.draw([p0,p1,p2,p3],getNums);
+			var drawArr:Array = b.draw([p0,p1,p2,p3],getNums,100,m_bg.width,needPointNum);
 			return drawArr;
 		}
 		protected function onDown(e:MouseEvent):void
@@ -79,6 +80,7 @@ package core.panels.node
 					drag = o;
 				}
 			}
+			GRoot.inst.addEventListener(MouseEvent.MOUSE_MOVE,onMove);
 		}
 		
 		protected function onMove(e:MouseEvent):void
@@ -96,9 +98,17 @@ package core.panels.node
 		
 		protected function onUp(e:Event):void
 		{
+			GRoot.inst.removeEventListener(MouseEvent.MOUSE_MOVE,onMove);
 			if(!drag) return;
 			var index:Number = parseInt(drag.name.slice(1));
-			points = draw(true);
+			points = draw(true,100);
+			for (var i:int = 0; i < points.length; i++) 
+			{
+				setTimeout(function(p:Point):void{
+					m_oo.x = p.x;
+					m_oo.y = p.y;
+				},i*20,points[i]);
+			}
 			drag = null;
 			saveCtrlPos();
 		}

@@ -3,6 +3,7 @@ package core.panels.node
 	import com.topdevil.nodes.NodeItem;
 	import com.topdevil.nodes.PropGroupUI;
 	
+	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.geom.Rectangle;
 	import flash.ui.Keyboard;

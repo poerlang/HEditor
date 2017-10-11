@@ -12,6 +12,7 @@ package rawui
 		public var m_o2:GImage;
 		public var m_o3:GImage;
 		public var m_o4:GImage;
+		public var m_oo:GImage;
 
 		public static const URL:String = "ui://rl5gnkttz51b88";
 
@@ -34,6 +35,7 @@ package rawui
 			m_o2 = GImage(this.getChildAt(3));
 			m_o3 = GImage(this.getChildAt(4));
 			m_o4 = GImage(this.getChildAt(5));
+			m_oo = GImage(this.getChildAt(6));
 		}
 	}
 }
