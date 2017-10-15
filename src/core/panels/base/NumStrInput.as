@@ -16,7 +16,7 @@ package core.panels.base
 	
 	import rawui.UI_NumericInput;
 
-	public class NumericInput extends UI_NumericInput
+	public class NumStrInput extends UI_NumericInput
 	{
 		private var _min:Number;
 		private var _max:Number;
@@ -30,7 +30,7 @@ package core.panels.base
 		public var onChange:Signal = new Signal();
 		public var toFixedNum:uint = 3;
 		
-		public function NumericInput()
+		public function NumStrInput()
 		{
 			_min = 0;
 			_max = int.MAX_VALUE;
@@ -214,6 +214,10 @@ package core.panels.base
 		{
 			if(!isString){
 				var v:Number = parseFloat(this.text);
+				if(isNaN(v)){
+					v=0;
+					this.text = "0";
+				}
 				if(v<_min)
 					v = _min;
 				else if(v>_max)
