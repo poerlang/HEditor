@@ -3,7 +3,11 @@ package core.panels.node
 	import flash.events.MouseEvent;
 	import flash.geom.Rectangle;
 	
+	import ash.signals.Signal1;
+	
 	import fairygui.GRoot;
+	
+	import org.osflash.signals.Signal;
 	
 	import rawui.UI_LevelPos;
 	
@@ -19,15 +23,16 @@ package core.panels.node
 		protected override function constructFromXML(xml:XML):void
 		{
 			super.constructFromXML(xml);
-			
+			ins = this;
 			addEventListener(MouseEvent.MOUSE_DOWN,down);
+			initX = m_drager.x;
 		}
 		
 		protected function down(e:MouseEvent):void
 		{
 			press = true;
 			lastX = HEditor.ins.stage.mouseX;
-			m_drager.x = globalToLocal(lastX).x;
+			theX = globalToLocal(lastX).x;
 			fixPos();
 			GRoot.inst.addEventListener(MouseEvent.MOUSE_MOVE,move);
 			GRoot.inst.addEventListener(MouseEvent.MOUSE_UP,up);
@@ -41,13 +46,21 @@ package core.panels.node
 			GRoot.inst.removeEventListener(MouseEvent.MOUSE_UP,up);
 		}
 		private var rect:Rectangle = new Rectangle();
+		public static var ins:LevelPos;
+		public var step:Number = 1;
+		public var theX:Number = 0;
+
+		private var initX:Number;
+
+		public var level:Number=1;
+		public var levelChange:Signal = new Signal;
 		public function move(e:MouseEvent):void
 		{
 			if(press){
 				m_drager.m_line.alpha = 0.38;
 				var nowX:Number = HEditor.ins.stage.mouseX;
 				var dx:Number = nowX-lastX;
-				m_drager.x+=dx;
+				theX+=dx;
 				lastX = nowX;
 				
 				fixPos();
@@ -56,7 +69,7 @@ package core.panels.node
 		
 		private function fixPos():void
 		{
-			var xx:Number = m_drager.x;
+			var xx:Number = theX;
 			var yy:Number = m_drager.y;
 			rect.x = m_dragBounds.x;
 			rect.y = m_dragBounds.y;
@@ -79,7 +92,21 @@ package core.panels.node
 				if(yy < rect.y)
 					yy = rect.y;
 			}
-			m_drager.x = Math.round(xx);
+			//吸附
+			var tmp:Number = xx-initX;
+			var part:Number = tmp%step;
+			if(part>step*0.5){
+				tmp+=(step-part);
+			}else{
+				tmp-=part;
+			}
+			var newLevel:Number = Math.round(tmp/step)+1;
+			if(newLevel!=level){
+				level = newLevel;
+				levelChange.dispatch(level);
+			}
+			
+			m_drager.x = tmp+initX;
 			m_drager.y = Math.round(yy);
 		}
 	}

@@ -9,6 +9,7 @@ package core.panels.base
 	import flash.text.TextField;
 	
 	import fairygui.Controller;
+	import fairygui.GButton;
 	import fairygui.GObject;
 	import fairygui.event.DragEvent;
 	
@@ -28,7 +29,7 @@ package core.panels.base
 		private var _step:Number;
 		private var _c1:Controller;
 		public var onChange:Signal = new Signal();
-		public var toFixedNum:uint = 3;
+		public var toFixedNum:uint = 0;
 		
 		public function NumStrInput()
 		{
@@ -78,7 +79,7 @@ package core.panels.base
 				
 				super.text = toFixed(_value, _fractionDigits);				
 			}
-
+			onChange.dispatch();
 		}
 		
 		private function toFixed(_value:Number, _fractionDigits:int):String
@@ -101,6 +102,18 @@ package core.panels.base
 			return _fractionDigits;
 		}
 		
+		public function addBtn(up:GButton,down:GButton):void{
+			up.addClickListener(onUpBtnClick);
+			down.addClickListener(onDownBtnClick);
+		}
+		
+		private function onDownBtnClick(e):void{
+			value = _value-1;
+		}
+		private function onUpBtnClick(e):void
+		{
+			value = _value+1;
+		}
 		public function set fractionDigits(value:int):void
 		{
 			_fractionDigits = value;
@@ -145,7 +158,6 @@ package core.panels.base
 		{
 			if(e.keyCode==13){
 				__focusOut();
-				onChange.dispatch();
 			}
 		}
 		
@@ -247,7 +259,6 @@ package core.panels.base
 				this.value-=_step;
 			else
 				this.value+=_step;
-			onChange.dispatch();
 		}
 		
 		private function __mousedown(evt:Event):void

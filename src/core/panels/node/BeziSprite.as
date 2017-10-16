@@ -74,8 +74,8 @@ package core.panels.node
 				t++;
 			}
 			if(needPoints){
-				var xstep:Number = boxWidth/timePointNum;
-				for (var i:int = 0; i < timePointNum; i++) 
+				var xstep:Number = boxWidth/(needPointNum-1);
+				for (var i:int = 0; i < needPointNum; i++) 
 				{
 					var xx:Number = xstep*i;
 					var yy:Number = walk(xx);

@@ -189,8 +189,9 @@
     <component id="xay58a" name="DragStart.xml" path="/com/"/>
     <component id="xay58b" name="LevelPos.xml" path="/" exported="true"/>
     <component id="xay58c" name="LevelPosDrager.xml" path="/"/>
+    <component id="g34m8d" name="BeziArea.xml" path="/BuffEditor/"/>
   </resources>
-  <publish name="rawui" path="e:\HEditor\bin-debug\res" packageCount="2" genCode="true">
+  <publish name="rawui" path="D:\GameEditor\bin-debug\res" packageCount="2" genCode="true">
     <atlas name="默认" index="0"/>
   </publish>
 </packageDescription>

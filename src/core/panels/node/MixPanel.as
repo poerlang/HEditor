@@ -3,20 +3,16 @@ package core.panels.node
 	import com.topdevil.nodes.NodeItem;
 	import com.topdevil.nodes.PropGroupUI;
 	
-	import flash.events.Event;
 	import flash.events.MouseEvent;
-	import flash.geom.Rectangle;
 	import flash.ui.Keyboard;
 	import flash.utils.Dictionary;
-	import flash.utils.setTimeout;
 	
 	import core.panels.base.Alert;
 	import core.panels.base.AlertInput;
 	import core.panels.base.BaseWindow;
-	import core.panels.base.NumericInput;
+	import core.panels.base.NumStrInput;
 	
 	import fairygui.GComponent;
-	import fairygui.GGraph;
 	import fairygui.GList;
 	import fairygui.Window;
 	import fairygui.event.GTouchEvent;
@@ -33,6 +29,7 @@ package core.panels.node
 	import tools.FileX;
 	import tools.GameMathUtil;
 	import tools.Uuid;
+	import rawui.UI_LevelPos;
 
 	public class MixPanel extends BaseWindow
 	{
@@ -53,42 +50,48 @@ package core.panels.node
 			super();
 			v = UI_MixPanel.createInstance();
 			contentPane = v;
-			v.m_save.addClickListener(save);
+			v.m_saveMix.addClickListener(saveMix);
 			v.m_newStuff.addClickListener(createStuff);
 			v.m_stufflist.addEventListener(ItemEvent.CLICK,onStuffListItemClick);
 			v.m_outlist.addEventListener(ItemEvent.CLICK,onOutListItemClick);
-			v.m_inlist.addEventListener(ItemEvent.CLICK,onInListItemClick);
+			v.m_beziArea.m_inlist.addEventListener(ItemEvent.CLICK,onInListItemClick);
+			v.m_attrArea.m_inlist.addEventListener(ItemEvent.CLICK,onAttrListItemClick);
 			v.m_mixlist.addEventListener(ItemEvent.CLICK,onMixListItemClick);
 			
-			var drager:UI_LevelPosDrager = v.m_levelpos.m_drager;
+			var drager:UI_LevelPosDrager = v.m_beziArea.m_levelpos.m_drager;
 			
 			v.addEventListener(MouseEvent.MOUSE_DOWN,onT);
 			v.m_newMix.addClickListener(createMix);
 			v.m_toOut.addClickListener(toOut);
 			v.m_toIn.addClickListener(toIn);
+			v.m_toAttr.addClickListener(toAttr);
 			v.m_addLevel.addClickListener(addLevel);
 			v.m_subLevel.addClickListener(subLevel);
 			v.m_addNum.addClickListener(addNum);
 			v.m_subNum.addClickListener(subNum);
 			v.m_bg1.addClickListener(onBgClick);
 			v.m_setTxt.addClickListener(onSetTxt);
-			(v.m_level as NumericInput).onChange.add(onLevelChange);
-			(v.m_num as NumericInput).onChange.add(onNumChange);
+			(v.m_level as NumStrInput).onChange.add(onLevelChange);
+			(v.m_num as NumStrInput).onChange.add(onNumChange);
 			
-			mixFilterInput = v.m_mixFilterInput as NumericInput;
+			mixFilterInput = v.m_mixFilterInput as NumStrInput;
 			mixFilterInput.onChange.add(onMixFilterChange);
 			mixFilterInput.isString = true;
 			
-			stuffFilterInput = v.m_stuffFilterInput as NumericInput;
+			stuffFilterInput = v.m_stuffFilterInput as NumStrInput;
 			stuffFilterInput.onChange.add(onStuffFilterChange);
 			stuffFilterInput.isString = true;
 			
 			panels = v.m_panels;
 			
-			level = v.m_level as NumericInput;
-			num = v.m_num as NumericInput;
+			level = v.m_level as NumStrInput;
+			num = v.m_num as NumStrInput;
 			level.toFixedNum = 0;
 			num.toFixedNum = 0;
+			maxlevelUI = v.m_max_level as NumStrInput;
+			maxlevelUI.addBtn(v.m_addMaxLevel,v.m_subMaxLevel);
+			maxlevelUI.onChange.add(onMaxLevelChange);
+			
 			reloadStuffList();
 			reloadAllMix();
 			reloadTags();
@@ -96,6 +99,46 @@ package core.panels.node
 				v.m_taglistGroup.selectedPage = "hide";
 			});
 			v.m_taglist.m_list.addEventListener(ItemEvent.CLICK,onTagSel);
+			levelPosForMix = v.m_beziArea.m_levelpos as LevelPos;
+			levelPosForAttr = v.m_attrArea.m_levelpos as LevelPos;
+			levelPosForMix.levelChange.add(onLevelPosChange);
+			v.m_beziArea.m_levelpos.m_drager.height = v.m_beziArea.height-10;
+			v.m_attrArea.m_levelpos.m_drager.height = v.m_attrArea.height-10;
+		}
+		
+		private function onLevelPosChange(level:int):void
+		{
+			if(!v.m_hasLevel.selected){
+				return;
+			}
+			var item:StuffItem;
+			if(v.m_outlist.numChildren>0){
+				item = v.m_outlist.getChildAt(0) as StuffItem;
+				item.m_level.text = "等级 "+level;
+			}
+			if(v.m_beziArea.m_inlist.numChildren>0){
+				var len:int = v.m_beziArea.m_inlist.numChildren;
+				for (var i:int = 0; i < len; i++) 
+				{
+					item = v.m_beziArea.m_inlist.getChildAt(i) as StuffItem;
+					item.m_num.text = "× "+item.getNumAtLevel(level,maxLevel);
+				}
+			}
+		}
+		public function get maxLevel():int{
+			return maxlevelUI.value;
+		}
+		private function onMaxLevelChange():void
+		{
+			var len:int = v.m_beziArea.m_inlist.numChildren;
+			var val:Number = maxlevelUI.value;
+			var step:Number; 
+			for (var i:int = 0; i < len; i++) 
+			{
+				var item:StuffItem = v.m_beziArea.m_inlist.getChildAt(i) as StuffItem;
+				step = item.drawLines(val);
+			}
+			levelPosForMix.step = step;
 		}
 		
 		protected function setTags(tags:Array):void
@@ -159,16 +202,21 @@ package core.panels.node
 		private var fileNow:GComponent;
 		private var lastSelList:GList;
 
-		private var level:NumericInput;
+		private var level:NumStrInput;
 
-		private var mixFilterInput:NumericInput;
+		private var mixFilterInput:NumStrInput;
 		private var now:NodeItem;
-		private var num:NumericInput;
+		private var num:NumStrInput;
 		private var panels:GList;
 		private var panelsDic:Object = {};
-		private var stuffFilterInput:NumericInput;
+		private var stuffFilterInput:NumStrInput;
 
 		private var stuffSel:StuffItem;
+
+		private var maxlevelUI:NumStrInput;
+
+		private var levelPosForMix:LevelPos;
+		private var levelPosForAttr:LevelPos;
 		
 		public function regKeys():void
 		{
@@ -186,7 +234,13 @@ package core.panels.node
 		}
 		protected function onInListItemClick(e:ItemEvent):void
 		{
-			lastSelList = v.m_inlist;
+			lastSelList = v.m_beziArea.m_inlist;
+			bindAddSub(e.itemObject as StuffItem);
+			v.m_addGoup.selectedPage = "show";
+		}
+		protected function onAttrListItemClick(e:ItemEvent):void
+		{
+			lastSelList = v.m_attrArea.m_inlist;
 			bindAddSub(e.itemObject as StuffItem);
 			v.m_addGoup.selectedPage = "show";
 		}
@@ -272,7 +326,7 @@ package core.panels.node
 		private function createMix(e:*=null):void
 		{
 			if(e){
-				v.m_inlist.removeChildrenToPool();
+				v.m_beziArea.m_inlist.removeChildrenToPool();
 				v.m_outlist.removeChildrenToPool();
 			}
 			var randomName:String = new Uuid().toString();
@@ -336,7 +390,7 @@ package core.panels.node
 		
 		private function fromMix(m:MixItem):void
 		{
-			v.m_inlist.removeChildrenToPool();
+			v.m_beziArea.m_inlist.removeChildrenToPool();
 			v.m_outlist.removeChildrenToPool();
 			var ob:Object = m.data;
 			var item:StuffItem;
@@ -354,7 +408,7 @@ package core.panels.node
 			for (var i:int = 0; i < ob.ins.length; i++) 
 			{
 				one = ob.ins[i];
-				item = v.m_inlist.addItemFromPool(UI_StuffItem.URL) as StuffItem;
+				item = v.m_beziArea.m_inlist.addItemFromPool(UI_StuffItem.URL) as StuffItem;
 				item.data = one;
 				updateInItem(item);
 				real = StuffManager.ins.get(one.name);
@@ -590,7 +644,7 @@ package core.panels.node
 			i.data = ob;
 			updateOneMix(ob,i);
 		}
-		private function save(fname:String):void
+		private function saveMix(fname:String):void
 		{
 			var selectedIndex:int;
 			selectedIndex = v.m_mixlist.selectedIndex;
@@ -600,7 +654,7 @@ package core.panels.node
 			selectedIndex = v.m_mixlist.selectedIndex;
 			var mix:MixItem = v.m_mixlist.getChildAt(selectedIndex) as MixItem;
 			var ob:Object = mix.data;
-			var inlist:GList = v.m_inlist;
+			var inlist:GList = v.m_beziArea.m_inlist;
 			var outlist:GList = v.m_outlist;
 			var arrIn:Array = getDatasFromList(inlist);
 			var arrOut:Array = getDatasFromList(outlist);
@@ -631,9 +685,21 @@ package core.panels.node
 				return;
 			}
 			var ob:Object = GameMathUtil.clone(stuffSel.data);
-			var i:StuffItem = v.m_inlist.addItemFromPool(UI_StuffItem.URL) as StuffItem;
+			var i:StuffItem = v.m_beziArea.m_inlist.addItemFromPool(UI_StuffItem.URL) as StuffItem;
 			i.data = ob;
 			updateInItem(i);
+			//setTimeout(i.changeBeziBox,1000);
+		}
+		private function toAttr(e):void
+		{
+			if(!stuffSel){
+				Alert.showTxt("请先在下面的列表中选择一个物品");
+				return;
+			}
+			var ob:Object = GameMathUtil.clone(stuffSel.data);
+			var i:StuffItem = v.m_attrArea.m_inlist.addItemFromPool(UI_StuffItem.URL) as StuffItem;
+			i.data = ob;
+			updateInItem(i,true);
 			//setTimeout(i.changeBeziBox,1000);
 		}
 		
@@ -649,19 +715,25 @@ package core.panels.node
 			updateOutItem(i);
 		}
 		
-		private function updateInItem(i:StuffItem):void{
+		private function updateInItem(i:StuffItem,isAttr:Boolean=false):void{
 			updateInOutItem(i);
 			i.m_c1.selectedIndex = 2;
-			i.width = v.m_inlist.width-i.x-8;
+			i.width = i.parent.width-i.x-8;
 			i.height = 133;
-			i.width;
 			i.changeBeziBox();
+			var step:Number = i.drawLines(maxlevelUI.value);
+			if(isAttr){
+				levelPosForAttr.step = step;
+			}else{
+				levelPosForMix.step = step;
+			}
 		}
 		private function updateOutItem(i:StuffItem):void{
 			updateInOutItem(i);
 			i.m_c1.selectedIndex = 1;
-			i.width = 112;
+			i.width = 122;
 			i.height = 40;
+			//maxlevelUI.onChange.dispatch();
 		}
 		private function updateInOutItem(i:StuffItem):void
 		{

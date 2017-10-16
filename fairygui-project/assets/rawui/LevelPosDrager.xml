@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="14,57">
+<component size="14,57" opaque="false">
   <displayList>
     <image id="n235_xay5" name="n235" src="qj2i4h" xy="-7,-9"/>
     <graph id="n236_xay5" name="line" xy="0,1" size="1,55" alpha="0.17" type="rect" lineSize="0" fillColor="#ffffcc99">

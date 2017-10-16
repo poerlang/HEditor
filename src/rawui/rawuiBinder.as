@@ -11,6 +11,7 @@ package rawui
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_StuffItem.URL, UI_StuffItem);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_MixItem.URL, UI_MixItem);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_BuffNodePanel.URL, UI_BuffNodePanel);
+			fairygui.UIObjectFactory.setPackageItemExtension(UI_BeziArea.URL, UI_BeziArea);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_TagList.URL, UI_TagList);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_ButtonToggleWithCheck.URL, UI_ButtonToggleWithCheck);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_ButtonToggle.URL, UI_ButtonToggle);

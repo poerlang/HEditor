@@ -7,7 +7,7 @@ package bind
 	import core.panels.base.LabelCombox;
 	import core.panels.base.LabelFile;
 	import core.panels.base.LabelInput;
-	import core.panels.base.NumericInput;
+	import core.panels.base.NumStrInput;
 	import core.panels.base.TextInput;
 	import core.panels.node.BeziContainer;
 	import core.panels.node.LevelPos;
@@ -42,7 +42,7 @@ package bind
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_LabelCombox.URL, LabelCombox);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_LabelFile.URL, LabelFile);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_LabelInput.URL, LabelInput);
-			fairygui.UIObjectFactory.setPackageItemExtension(UI_NumericInput.URL, NumericInput);
+			fairygui.UIObjectFactory.setPackageItemExtension(UI_NumericInput.URL, NumStrInput);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_PropGroupUI.URL, PropGroupUI);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_NpcItem.URL, NpcItem);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_Npc.URL, Npc);

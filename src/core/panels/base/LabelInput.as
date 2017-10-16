@@ -8,7 +8,7 @@ package core.panels.base
 	{
 		private var left:GTextField;
 
-		public var txt:NumericInput;
+		public var txt:NumStrInput;
 		private var cfg:Object;
 		private var _val:Object;
 		public function LabelInput()
@@ -35,7 +35,7 @@ package core.panels.base
 		private function initUI():void
 		{
 			left = getChild("left").asTextField;
-			txt = m_right as NumericInput;
+			txt = m_right as NumStrInput;
 			txt.onChange.add(onChange);
 		}
 		

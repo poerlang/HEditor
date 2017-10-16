@@ -9,7 +9,7 @@ package
 	import citrus.input.controllers.KeyboardController;
 	import citrus.input.input.Input;
 	
-	import core.panels.base.NumericInput;
+	import core.panels.base.NumStrInput;
 
 	public class Keys
 	{
@@ -63,7 +63,7 @@ package
 		private static var lastTargetPointCountDown:int;
 		private static var testCount:int;
 		public static function onKeyPress():void{
-			if(NumericInput.now)//如果正在输入文字,则返回
+			if(NumStrInput.now)//如果正在输入文字,则返回
 				return;
 			for(var key:String in keyFunMap){
 				if(inputs.justDid(key)){

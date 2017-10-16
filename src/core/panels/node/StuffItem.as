@@ -4,6 +4,8 @@ package core.panels.node
 	import flash.events.MouseEvent;
 	import flash.geom.Point;
 	
+	import core.panels.base.NumStrInput;
+	
 	import rawui.UI_StuffItem;
 	
 	public class StuffItem extends UI_StuffItem
@@ -14,6 +16,12 @@ package core.panels.node
 		private var endX:Number;
 
 		private var zeroX:Number;
+
+		private var max:NumStrInput;
+
+		private var lines:LevelLines;
+
+		private var step:Number;
 		public function StuffItem()
 		{
 			super();
@@ -31,6 +39,13 @@ package core.panels.node
 			this.addEventListener(MouseEvent.RELEASE_OUTSIDE,up);
 			this.addEventListener(MouseEvent.MOUSE_MOVE,move);
 			zeroX = m_bezi.x;
+			max = m_max as NumStrInput;
+			max.toFixedNum = 0;
+			max.addBtn(m_addMax,m_subMax);
+			lines = new LevelLines();
+			m_lines.x = m_bezi.x;
+			m_lines.y = m_bezi.y;
+			m_lines.setNativeObject(lines);
 		}
 		
 		protected function move(e:Event):void
@@ -67,7 +82,14 @@ package core.panels.node
 			}
 			b.onSizeChange();
 		}
-		
+		public function drawLines(num:int):Number{
+			m_lines.x = m_bezi.x;
+			m_lines.y = m_bezi.y;
+			var b:BeziContainer = m_bezi as BeziContainer;
+			step = lines.setSize(b.width,b.height,num);
+			b.step = step;
+			return step;
+		}
 		protected function up(e:MouseEvent):void
 		{
 			press = false;
@@ -80,6 +102,22 @@ package core.panels.node
 			press = true;
 			dragLeft = !(pos.x>(b.x+2));
 			endX = b.x+b.width;
+		}
+		
+		public function getNumAtLevel(level:int,maxLevel:int):int
+		{
+			var b:BeziContainer = m_bezi as BeziContainer;
+			if(!b.points || b.points.length!=maxLevel){
+				b.draw(true,maxLevel);
+			}
+			var points:Array = b.points;
+			if(points){
+				var hh:Number = b.height;
+				var n:Number = ((hh-points[level-1].y)/hh);
+				var out:int = Math.round(n*max.value);
+				return out;
+			}
+			return 1;
 		}
 	}
 }
