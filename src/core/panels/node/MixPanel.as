@@ -4,19 +4,25 @@ package core.panels.node
 	import com.topdevil.nodes.PropGroupUI;
 	
 	import flash.events.MouseEvent;
+	import flash.filesystem.File;
 	import flash.ui.Keyboard;
 	import flash.utils.Dictionary;
+	import flash.utils.setTimeout;
 	
+	import core.panels.IconSelPanel;
+	import core.panels.StuffSelPanel;
 	import core.panels.base.Alert;
 	import core.panels.base.AlertInput;
 	import core.panels.base.BaseWindow;
 	import core.panels.base.NumStrInput;
 	
+	import fairygui.GButton;
 	import fairygui.GComponent;
 	import fairygui.GList;
 	import fairygui.Window;
 	import fairygui.event.GTouchEvent;
 	import fairygui.event.ItemEvent;
+	import fairygui.event.StateChangeEvent;
 	
 	import rawui.UI_BufferFileItem;
 	import rawui.UI_ButtonToggleWithCheck;
@@ -29,12 +35,12 @@ package core.panels.node
 	import tools.FileX;
 	import tools.GameMathUtil;
 	import tools.Uuid;
-	import rawui.UI_LevelPos;
 
 	public class MixPanel extends BaseWindow
 	{
-		private static var MIX_DIR:String = "res/mix/";
-		private static var STUFF_DIR:String = "res/stuff/";
+		public static var MIX_DIR:String = "res/mix/";
+		public static var STUFF_DIR:String = "res/stuff/";
+		public static var ICON_DIR:String = "res/icon/";
 		private static var _ins:MixPanel;
 
 		public static function get ins():MixPanel
@@ -57,6 +63,10 @@ package core.panels.node
 			v.m_beziArea.m_inlist.addEventListener(ItemEvent.CLICK,onInListItemClick);
 			v.m_attrArea.m_inlist.addEventListener(ItemEvent.CLICK,onAttrListItemClick);
 			v.m_mixlist.addEventListener(ItemEvent.CLICK,onMixListItemClick);
+			v.m_taglist.m_list.addEventListener(ItemEvent.CLICK,onTagSel);
+			v.m_stuffIcon.addClickListener(selIcon);
+			v.m_iconLoader.addClickListener(selIcon);
+			v.m_stuffTxt.addClickListener(setTxt);
 			
 			var drager:UI_LevelPosDrager = v.m_beziArea.m_levelpos.m_drager;
 			
@@ -64,13 +74,14 @@ package core.panels.node
 			v.m_newMix.addClickListener(createMix);
 			v.m_toOut.addClickListener(toOut);
 			v.m_toIn.addClickListener(toIn);
-			v.m_toAttr.addClickListener(toAttr);
+			v.m_addSubStuff.addClickListener(addSubStuff);
 			v.m_addLevel.addClickListener(addLevel);
 			v.m_subLevel.addClickListener(subLevel);
 			v.m_addNum.addClickListener(addNum);
 			v.m_subNum.addClickListener(subNum);
 			v.m_bg1.addClickListener(onBgClick);
 			v.m_setTxt.addClickListener(onSetTxt);
+			v.m_saveSubStuff.addClickListener(saveSubStuff);
 			(v.m_level as NumStrInput).onChange.add(onLevelChange);
 			(v.m_num as NumStrInput).onChange.add(onNumChange);
 			
@@ -98,17 +109,76 @@ package core.panels.node
 			v.m_taglist.m_bg2.addClickListener(function(e):void{
 				v.m_taglistGroup.selectedPage = "hide";
 			});
-			v.m_taglist.m_list.addEventListener(ItemEvent.CLICK,onTagSel);
 			levelPosForMix = v.m_beziArea.m_levelpos as LevelPos;
 			levelPosForAttr = v.m_attrArea.m_levelpos as LevelPos;
 			levelPosForMix.levelChange.add(onLevelPosChange);
 			v.m_beziArea.m_levelpos.m_drager.height = v.m_beziArea.height-10;
 			v.m_attrArea.m_levelpos.m_drager.height = v.m_attrArea.height-10;
+			
+			v.m_hasLevelforMix.addStateListener(onHasLevelForMixClick);
+			v.m_hasLevelforStuff.addStateListener(onHasLevelForMixClick);
+		}
+		
+		private function setTxt(e):void{
+			var stuffName:String = v.m_stuffName.text;
+			var str:String = FileX.FileToString(STUFF_DIR+stuffName);
+			var o:Object = JSON.parse(str);
+			AlertInput.showTxt("请输入物品的文字说明",function(_txt:String):void{
+				if(!str){
+					Alert.showTxt("文件已经被删除，或不存在:"+"res/buff/"+stuffName);
+					return;
+				}
+				o.desc = _txt;
+				var out:String = JSON.stringify(o,null," ");
+				FileX.stringToFile(out,STUFF_DIR+stuffName);
+			},null,o.desc?o.desc:"");
+		}
+		private function selIcon(e):void
+		{
+			IconSelPanel.sel(function(ob:Object):void{
+				v.m_iconLoader.icon = ob.url;
+				var stuffName:String = v.m_stuffName.text;
+				var str:String = FileX.FileToString(STUFF_DIR+stuffName);
+				if(!str){
+					Alert.showTxt("文件已经被删除，或不存在:"+"res/buff/"+stuffName);
+					return;
+				}
+				var o:Object = JSON.parse(str);
+				o.icon = "res/icon/"+ob.name;
+				var out:String = JSON.stringify(o,null," ");
+				FileX.stringToFile(out,STUFF_DIR+stuffName);
+			});
+		}
+		
+		private function onHasLevelForMixClick(e:StateChangeEvent):void
+		{
+			var bt:GButton = e.target as GButton;
+			if(bt==v.m_hasLevelforMix){
+				v.m_beziArea.m_levelpos.visible = bt.selected;
+				forList(v.m_beziArea.m_inlist,function(i:StuffItem):void{
+					updateInItem(i,false,bt.selected);
+				});
+			}
+			if(bt==v.m_hasLevelforStuff){
+				v.m_attrArea.m_levelpos.visible = bt.selected;
+				forList(v.m_attrArea.m_inlist,function(i:StuffItem):void{
+					updateInItem(i,false,bt.selected);
+				});
+			}
+		}
+		
+		private function forList(m_inlist:GList, fun:Object):void
+		{
+			var len:int = m_inlist.numChildren;
+			for (var i:int = 0; i < len; i++) 
+			{
+				fun(m_inlist.getChildAt(i));
+			}
 		}
 		
 		private function onLevelPosChange(level:int):void
 		{
-			if(!v.m_hasLevel.selected){
+			if(!v.m_hasLevelforMix.selected){
 				return;
 			}
 			var item:StuffItem;
@@ -275,6 +345,37 @@ package core.panels.node
 		{
 			lastSelList = v.m_stufflist;
 			stuffSel = e.itemObject as StuffItem;
+			v.m_addSubStuff.visible = true;
+			v.m_saveSubStuff.visible = true;
+			v.m_stuffIcon.visible = true;
+			v.m_stuffTxt.visible = true;
+			v.m_iconLoader.visible = true;
+			v.m_stuffName.text = stuffSel.data.name;
+			var stuffName:String = stuffSel.data.name;
+			var str:String = FileX.FileToString(STUFF_DIR+stuffName);
+			if(!str){
+				Alert.showTxt("文件已经被删除，或不存在:"+"res/buff/"+stuffName);
+				return;
+			}
+			var ob:Object = JSON.parse(str);
+			v.m_attrArea.m_inlist.removeChildrenToPool();
+			if(ob.icon){
+				var f:File = FileX.getFile(ob.icon);
+				v.m_iconLoader.icon = f.url;
+			}
+			var len:int = ob.sub.length;
+			for (var i:int = 0; i < len; i++) 
+			{
+				var sub:Object = ob.sub[i];
+				var stuffItem:StuffItem = v.m_attrArea.m_inlist.addItemFromPool(UI_StuffItem.URL) as StuffItem;
+				stuffItem.width = 124;
+				stuffItem.data = sub;
+				stuffItem.m_c1.selectedIndex = 1;
+				stuffItem.m_level.text = "等级 "+sub.level;
+				stuffItem.m_num.text = "× "+sub.num;
+				stuffItem.text = sub.name;
+				//TODO:表现曲线
+			}			
 		}
 		
 		private function addLevel(e):void
@@ -307,6 +408,7 @@ package core.panels.node
 			StuffManager.ins.add(ob);
 			var stuffItem:StuffItem = v.m_stufflist.addItemFromPool(UI_StuffItem.URL) as StuffItem;
 			stuffItem.data = ob;
+			stuffItem.width = 124;
 			stuffItem.title = ob.name;
 		}
 		private function bindAddSub(i:StuffItem):void
@@ -576,7 +678,7 @@ package core.panels.node
 		{
 			item.title = ob.name;
 			item.data = ob;
-			item.width = 122;
+			item.width = 124;
 			StuffManager.ins.add(ob);
 			item.m_c1.selectedIndex = 0;
 		}
@@ -690,17 +792,41 @@ package core.panels.node
 			updateInItem(i);
 			//setTimeout(i.changeBeziBox,1000);
 		}
-		private function toAttr(e):void
+		private function addSubStuff(e):void
 		{
-			if(!stuffSel){
-				Alert.showTxt("请先在下面的列表中选择一个物品");
+			StuffSelPanel.sel(function(ob:Object):void{
+				var i:StuffItem = v.m_attrArea.m_inlist.addItemFromPool(UI_StuffItem.URL) as StuffItem;
+				i.data = ob;
+				updateInItem(i,true);
+			});
+			//setTimeout(i.changeBeziBox,1000);
+		}
+		
+		private function saveSubStuff(e):void
+		{
+			var stuffName:String = v.m_stuffName.text;
+			var str:String = FileX.FileToString(STUFF_DIR+stuffName);
+			if(!str){
+				Alert.showTxt("文件已经被删除，或不存在:"+"res/buff/"+stuffName);
 				return;
 			}
-			var ob:Object = GameMathUtil.clone(stuffSel.data);
-			var i:StuffItem = v.m_attrArea.m_inlist.addItemFromPool(UI_StuffItem.URL) as StuffItem;
-			i.data = ob;
-			updateInItem(i,true);
-			//setTimeout(i.changeBeziBox,1000);
+			var ob:Object = JSON.parse(str);
+			var len:int = v.m_attrArea.m_inlist.numChildren;
+			var subs:Array = [];
+			for (var i:int = 0; i < len; i++) 
+			{
+				var stuffItem:StuffItem = v.m_attrArea.m_inlist.getChildAt(i) as StuffItem;
+				var level:Number = parseInt(stuffItem.m_level.text.replace("等级 ",""));
+				var num:Number = parseInt(stuffItem.m_num.text.replace("× ",""));
+				var sname:String = stuffItem.text;
+				var hasLevel:Boolean = stuffItem.m_c1.selectedIndex==2?true:false;
+				var sub:Object = {level:level,num:num,hasLevel:hasLevel,name:sname};
+				//TODO:记录曲线
+				subs.push(sub);
+			}
+			ob.sub = subs;
+			var out:String = JSON.stringify(ob,null," ");
+			FileX.stringToFile(out,STUFF_DIR+stuffName);
 		}
 		
 		private function toOut(e):void
@@ -715,23 +841,37 @@ package core.panels.node
 			updateOutItem(i);
 		}
 		
-		private function updateInItem(i:StuffItem,isAttr:Boolean=false):void{
+		private function updateInItem(i:StuffItem,isAttr:Boolean=false,hasLevel:Boolean=false):void{
 			updateInOutItem(i);
-			i.m_c1.selectedIndex = 2;
-			i.width = i.parent.width-i.x-8;
-			i.height = 133;
-			i.changeBeziBox();
-			var step:Number = i.drawLines(maxlevelUI.value);
-			if(isAttr){
-				levelPosForAttr.step = step;
+			if(hasLevel){
+				i.width = i.parent.width-i.x-8;
+				i.m_beziBg.width = i.width-145;
+				i.m_c1.selectedIndex = 2;
+				i.height = 180;
 			}else{
-				levelPosForMix.step = step;
+				i.width = 124;
+				i.height = 40;
+				i.m_c1.selectedIndex = 1;
+			}
+			setTimeout(changeBoxs,33,i,isAttr,hasLevel);
+		}
+		
+		private function changeBoxs(i,isAttr,hasLevel):void
+		{
+			i.changeBeziBox();
+			if(hasLevel){
+				var step:Number = i.drawLines(maxlevelUI.value);
+				if(isAttr){
+					levelPosForAttr.step = step;
+				}else{
+					levelPosForMix.step = step;
+				}
 			}
 		}
 		private function updateOutItem(i:StuffItem):void{
 			updateInOutItem(i);
 			i.m_c1.selectedIndex = 1;
-			i.width = 122;
+			i.width = 124;
 			i.height = 40;
 			//maxlevelUI.onChange.dispatch();
 		}

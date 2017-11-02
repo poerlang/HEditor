@@ -1,0 +1,24 @@
+{
+ "tag": [],
+ "getWay": "",
+ "keys": [
+  "异人男",
+  "yirennan",
+  "yrn"
+ ],
+ "numStr": [],
+ "desc": "",
+ "numType": 0,
+ "sub": [
+  {
+   "hasLevel": false,
+   "name": "素质点",
+   "num": 2,
+   "level": 1
+  }
+ ],
+ "name": "异人男",
+ "num": 1,
+ "level": 1,
+ "icon": ""
+}

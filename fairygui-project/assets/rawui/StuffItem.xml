@@ -26,28 +26,18 @@
       <gearDisplay controller="c1" pages="1,2"/>
       <gearLook controller="button" pages="0" values="0.55,0,0,1" default="1,0,0,1"/>
     </text>
-    <graph id="n11_yull" name="beziBg" xy="135,3" size="1,33" type="rect" lineSize="0" lineColor="#ff669900" fillColor="#ff333333">
+    <graph id="n11_yull" name="beziBg" xy="135,3" size="9,33" type="rect" lineSize="0" lineColor="#ff669900" fillColor="#ff333333">
       <gearDisplay controller="c1" pages="2"/>
       <relation target="" sidePair="rightext-right,height-height"/>
     </graph>
-    <graph id="n12_xay5" name="beziStart" xy="111,0" size="15,39" alpha="0" type="rect">
+    <graph id="n12_xay5" name="beziStart" xy="111,0" size="15,39" alpha="0.3" type="rect">
       <gearDisplay controller="c1" pages="2"/>
       <relation target="" sidePair="height-height"/>
     </graph>
-    <graph id="n15_xay5" name="beziEnd" xy="140,0" size="15,39" alpha="0" type="rect">
+    <graph id="n15_xay5" name="beziEnd" xy="140,0" size="15,39" alpha="0.1" type="rect" fillColor="#ff990000">
       <gearDisplay controller="c1" pages="2"/>
       <relation target="" sidePair="height-height,right-right"/>
     </graph>
-    <component id="n13_xay5" name="dragStart" src="xay58a" xy="122,0" size="15,39" alpha="0.33">
-      <gearDisplay controller="c1" pages="2"/>
-      <relation target="n9_z51b" sidePair="left-left"/>
-      <relation target="" sidePair="height-height"/>
-    </component>
-    <component id="n14_xay5" name="dragEnd" src="xay589" xy="440,0" size="14,39" alpha="0.33">
-      <gearDisplay controller="c1" pages="2"/>
-      <relation target="n9_z51b" sidePair="left-right"/>
-      <relation target="" sidePair="height-height"/>
-    </component>
     <component id="n16_xay5" name="addMax" src="wap583" xy="97,50" size="19,16" group="n24_xay5">
       <Button icon="ui://rl5gnkttqj2i5g"/>
     </component>

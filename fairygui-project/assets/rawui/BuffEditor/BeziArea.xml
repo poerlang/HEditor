@@ -4,7 +4,7 @@
     <list id="n203_ev8y" name="inlist" xy="0,26" size="674,621" overflow="scroll" scrollBarFlags="4" margin="0,0,3,3" scrollBarRes="ui://rl5gnkttqj2i6t," defaultItem="ui://rl5gnkttev8y80" autoItemSize="false">
       <relation target="" sidePair="bottomext-bottom,width-width"/>
     </list>
-    <component id="n234_xay5" name="levelpos" src="xay58b" xy="127,0" size="537,25">
+    <component id="n234_xay5" name="levelpos" src="xay58b" xy="127,0" size="537,25" visible="false">
       <relation target="" sidePair="rightext-right"/>
     </component>
   </displayList>

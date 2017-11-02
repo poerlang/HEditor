@@ -1,21 +1,17 @@
 {
+	"name": "F603E837-F78C-D211-41EB-FEDDC6217657",
 	"ins": [
 		{
-			"num": 1,
 			"name": "金砖",
+			"num": 1,
 			"level": 1
 		},
 		{
-			"num": 1,
 			"name": "黑金属",
+			"num": 1,
 			"level": 1
 		}
 	],
-	"tags": [
-		"副将",
-		"技能"
-	],
-	"name": "F603E837-F78C-D211-41EB-FEDDC6217657",
 	"keys": [
 		"屠龙刀",
 		"tulongdao",
@@ -29,9 +25,12 @@
 	],
 	"outs": [
 		{
-			"num": 1,
 			"name": "屠龙刀",
+			"num": 1,
 			"level": 1
 		}
+	],
+	"tags": [
+		"技能"
 	]
 }

@@ -30,8 +30,8 @@ package core.panels.node
 		{
 			super.constructFromXML(xml);
 			
-			m_dragStart.addEventListener(MouseEvent.MOUSE_DOWN,down);
-			m_dragEnd.addEventListener(MouseEvent.MOUSE_DOWN,down);
+//			m_dragStart.addEventListener(MouseEvent.MOUSE_DOWN,down);
+//			m_dragEnd.addEventListener(MouseEvent.MOUSE_DOWN,down);
 			m_beziBg.addEventListener(MouseEvent.MOUSE_DOWN,down);
 			m_beziStart.addEventListener(MouseEvent.MOUSE_DOWN,down);
 			m_beziEnd.addEventListener(MouseEvent.MOUSE_DOWN,down);
@@ -113,7 +113,14 @@ package core.panels.node
 			var points:Array = b.points;
 			if(points){
 				var hh:Number = b.height;
-				var n:Number = ((hh-points[level-1].y)/hh);
+				try
+				{
+					var n:Number = ((hh-points[level-1].y)/hh);
+				}
+				catch(e:Error) 
+				{
+					trace(e.message);
+				}
 				var out:int = Math.round(n*max.value);
 				return out;
 			}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="635,478">
+  <displayList>
+    <component id="n5_pasn" name="frame" src="k1sm2n" xy="0,0" size="635,478">
+      <relation target="" sidePair="width-width,height-height"/>
+    </component>
+    <graph id="n0_pasn" name="n0" xy="6,39" size="623,397" alpha="0.16" type="rect" lineColor="#ffcccccc" fillColor="#ff000000">
+      <relation target="n3_pasn" sidePair="left-left,top-top"/>
+      <relation target="n3_pasn" sidePair="width-width,height-height"/>
+    </graph>
+    <component id="n1_pasn" name="stuffFilterInput" src="qj2i6i" xy="214,5" size="166,24"/>
+    <text id="n2_pasn" name="n2" xy="183,8" size="29,21" alpha="0.46" fontSize="12" color="#999999" text="过滤"/>
+    <list id="n3_pasn" name="list" xy="6,39" size="623,397" layout="flow_hz" overflow="scroll" scrollBarFlags="4" margin="3,3,3,3" scrollBarRes="ui://rl5gnkttqj2i6t," defaultItem="ui://rl5gnkttev8y80">
+      <relation target="" sidePair="width-width,height-height"/>
+    </list>
+    <component id="n4_pasn" name="dostufffilter" src="qj2i3x" xy="380,5" size="51,25">
+      <Button title="过滤"/>
+    </component>
+    <text id="n6_pasn" name="n6" xy="6,8" size="53,21" alpha="0.46" fontSize="12" color="#999999" text="图标选择"/>
+    <component id="n7_pasn" name="ok" src="qj2i3x" xy="146,441" size="163,29">
+      <relation target="" sidePair="bottom-bottom"/>
+      <Button title="确定"/>
+    </component>
+    <component id="n8_pasn" name="no" src="qj2i3x" xy="345,441" size="163,29">
+      <relation target="" sidePair="bottom-bottom"/>
+      <Button title="取消"/>
+    </component>
+  </displayList>
+</component>

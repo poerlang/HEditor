@@ -1,12 +1,25 @@
 {
- "desc": "",
- "numStr": [],
  "tag": [],
- "numType": 0,
  "getWay": "",
- "num": 1,
- "sub": [],
+ "numStr": [],
+ "desc": "",
+ "numType": 0,
+ "sub": [
+  {
+   "hasLevel": false,
+   "name": "外功",
+   "num": 3333,
+   "level": 1
+  },
+  {
+   "hasLevel": false,
+   "name": "内力",
+   "num": 1,
+   "level": 1
+  }
+ ],
  "name": "屠龙刀",
+ "num": 1,
  "level": 1,
  "icon": ""
 }

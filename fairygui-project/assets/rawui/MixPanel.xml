@@ -3,7 +3,8 @@
   <controller name="addGoup" pages="0,hide,1,show" selected="0"/>
   <controller name="taglistGroup" pages="0,hide,1,show" selected="0"/>
   <controller name="mixSel" pages="0,hide,1,show" selected="0"/>
-  <controller name="maxLevelGroupCtrl" pages="0,,1," selected="0"/>
+  <controller name="maxLevelGroupCtrlForMix" pages="0,,1," selected="0"/>
+  <controller name="maxLevelGroupCtrlForStuff" pages="0,,1," selected="0"/>
   <displayList>
     <component id="n166" name="frame" src="k1sm2n" xy="0,0" size="1437,813">
       <relation target="" sidePair="width-width,height-height"/>
@@ -78,31 +79,58 @@
     <component id="n232_gawt" name="taglist" src="gawt85" xy="724,43">
       <gearDisplay controller="taglistGroup" pages="1"/>
     </component>
-    <component id="n233_z51b" name="hasLevel" src="qj2i45" xy="526,46" alpha="0.62">
-      <Button checked="true" title="等级曲线" controller="maxLevelGroupCtrl" page="0"/>
+    <component id="n233_z51b" name="hasLevelforMix" src="qj2i45" xy="487,9" alpha="0.62">
+      <Button title="等级曲线" controller="maxLevelGroupCtrlForMix" page="1"/>
     </component>
-    <component id="n235_ndc0" name="addMaxLevel" src="wap583" xy="674,38" size="19,16" group="n239_ndc0">
+    <component id="n235_ndc0" name="addMaxLevel" src="wap583" xy="635,1" size="19,16" group="n239_ndc0">
       <Button icon="ui://rl5gnkttqj2i5g"/>
     </component>
-    <component id="n236_ndc0" name="subMaxLevel" src="wap584" xy="674,56" size="19,16" group="n239_ndc0">
+    <component id="n236_ndc0" name="subMaxLevel" src="wap584" xy="635,19" size="19,16" group="n239_ndc0">
       <Button icon="ui://rl5gnkttqj2i5j"/>
     </component>
-    <text id="n237_ndc0" name="n237" xy="593,33" size="65,20" group="n239_ndc0" fontSize="10" color="#666666" autoSize="none" text="maxlevel"/>
-    <component id="n238_ndc0" name="max_level" src="qj2i6i" xy="594,46" size="78,20" group="n239_ndc0" tooltips="最大等级">
+    <text id="n237_ndc0" name="n237" xy="554,-4" size="65,20" group="n239_ndc0" fontSize="10" color="#666666" autoSize="none" text="maxlevel"/>
+    <component id="n238_ndc0" name="max_level" src="qj2i6i" xy="555,9" size="78,20" group="n239_ndc0" tooltips="最大等级">
       <Label title="10"/>
     </component>
-    <group id="n239_ndc0" name="maxLevelGroup" xy="593,33" size="100,39" advanced="true">
-      <gearDisplay controller="maxLevelGroupCtrl" pages="0"/>
+    <group id="n239_ndc0" name="maxLevelGroup" xy="554,-4" size="100,39" advanced="true">
+      <gearDisplay controller="maxLevelGroupCtrlForMix" pages="1"/>
     </group>
     <graph id="n240_g34m" name="n240" xy="958,39" size="15,769" alpha="0.08" tooltips="左边是合成，右边是物品" type="rect"/>
-    <component id="n241_g34m" name="attrArea" src="g34m8d" xy="974,290" size="459,517"/>
+    <component id="n241_g34m" name="attrArea" src="g34m8d" xy="974,338" size="459,469"/>
     <text id="n242_g34m" name="n242" xy="285,164" size="53,21" alpha="0.18" fontSize="12" color="#ffffff" text="材料区域"/>
-    <text id="n243_g34m" name="n243" xy="976,291" size="70,21" alpha="0.18" fontSize="12" color="#ffffff" text="属性/子物体"/>
-    <component id="n244_g34m" name="toAttr" src="qj2i3x" xy="1118,41" size="58,25">
-      <Button title="to 属性" titleColor="#999999"/>
+    <text id="n243_g34m" name="n243" xy="976,314" size="70,21" alpha="0.18" fontSize="12" color="#ffffff" text="属性/子物体"/>
+    <component id="n244_g34m" name="addSubStuff" src="qj2i3x" xy="1061,313" size="70,25" visible="false">
+      <Button title="添加子物品" titleColor="#999999"/>
     </component>
-    <component id="n245_g34m" name="saveStuff" src="qj2i3x" xy="1066,6">
-      <Button title="保存"/>
+    <component id="n246_pasn" name="hasLevelforStuff" src="qj2i45" xy="1173,9" alpha="0.62">
+      <Button title="等级曲线" controller="maxLevelGroupCtrlForStuff" page="1"/>
     </component>
+    <component id="n247_pasn" name="addMaxLevelStuff" src="wap583" xy="1322,1" size="19,16" group="n251_pasn">
+      <Button icon="ui://rl5gnkttqj2i5g"/>
+    </component>
+    <component id="n248_pasn" name="subMaxLevelStuff" src="wap584" xy="1322,19" size="19,16" group="n251_pasn">
+      <Button icon="ui://rl5gnkttqj2i5j"/>
+    </component>
+    <text id="n249_pasn" name="n249" xy="1241,-4" size="65,20" group="n251_pasn" fontSize="10" color="#666666" autoSize="none" text="maxlevel"/>
+    <component id="n250_pasn" name="max_level_stuff" src="qj2i6i" xy="1242,9" size="78,20" group="n251_pasn" tooltips="最大等级">
+      <Label title="10"/>
+    </component>
+    <group id="n251_pasn" name="maxLevelGroupStuff" xy="1241,-4" size="100,39" advanced="true">
+      <gearDisplay controller="maxLevelGroupCtrlForStuff" pages="1"/>
+    </group>
+    <text id="n252_pasn" name="stuffName" xy="977,293" size="10,21" fontSize="12" color="#cccccc" text=""/>
+    <component id="n253_pasn" name="saveSubStuff" src="qj2i3x" xy="1140,313" size="49,25" visible="false">
+      <Button title="保存" titleColor="#999999"/>
+    </component>
+    <component id="n254_px7w" name="stuffTxt" src="qj2i3x" xy="1199,313" size="91,25" visible="false">
+      <Button title="物品文字说明" titleColor="#999999"/>
+    </component>
+    <component id="n255_px7w" name="stuffIcon" src="qj2i3x" xy="1297,313" size="44,25" visible="false">
+      <Button title="图标" titleColor="#999999"/>
+    </component>
+    <image id="n258_px7w" name="bg" src="k1sm2i" xy="1354,306" size="36,36" aspect="true">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <loader id="n257_px7w" name="iconLoader" xy="1354,306" size="36,36" fill="scaleFree"/>
   </displayList>
 </component>

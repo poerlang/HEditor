@@ -38,6 +38,9 @@ package rawui
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_CenterPoint.URL, UI_CenterPoint);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_NpcPanelRight.URL, UI_NpcPanelRight);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_ActionItem.URL, UI_ActionItem);
+			fairygui.UIObjectFactory.setPackageItemExtension(UI_StuffSelPanel.URL, UI_StuffSelPanel);
+			fairygui.UIObjectFactory.setPackageItemExtension(UI_IconSelPanel.URL, UI_IconSelPanel);
+			fairygui.UIObjectFactory.setPackageItemExtension(UI_IconBtn.URL, UI_IconBtn);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_Button.URL, UI_Button);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_ComboBoxPopup.URL, UI_ComboBoxPopup);
 			fairygui.UIObjectFactory.setPackageItemExtension(UI_TextInput.URL, UI_TextInput);

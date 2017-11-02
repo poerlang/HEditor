@@ -1,0 +1,36 @@
+{
+	"outs": [
+		{
+			"name": "训练场经验",
+			"num": 1,
+			"level": 1
+		}
+	],
+	"ins": [
+		{
+			"name": "训练场金砖",
+			"num": 1,
+			"level": 1
+		},
+		{
+			"name": "训练小时",
+			"num": 1,
+			"level": 1
+		}
+	],
+	"keys": [
+		"训练场经验",
+		"xunlianchangjingyan",
+		"xlcjy",
+		"训练场金砖",
+		"xunlianchangjinzhuan",
+		"xlcjz",
+		"训练小时",
+		"xunlianxiaoshi",
+		"xlxs"
+	],
+	"name": "77EC8986-7515-3129-41C2-76FC4EAAD001",
+	"tags": [
+		"升级"
+	]
+}

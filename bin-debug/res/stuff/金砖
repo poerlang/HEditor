@@ -1,12 +1,17 @@
 {
- "desc": "",
- "numStr": [],
- "tag": [],
- "numType": 0,
- "getWay": "",
- "num": 1,
- "sub": [],
- "name": "金砖",
- "level": 1,
- "icon": ""
+	"tag": [],
+	"getWay": "",
+	"keys": [
+		"金砖",
+		"jinzhuan",
+		"jz"
+	],
+	"numStr": [],
+	"icon": "",
+	"numType": 0,
+	"level": 1,
+	"name": "金砖",
+	"num": 1,
+	"sub": [],
+	"desc": ""
 }

@@ -1,0 +1,17 @@
+{
+ "keys": [
+  "素质点",
+  "suzhidian",
+  "szd"
+ ],
+ "getWay": "",
+ "numStr": [],
+ "desc": "气的凝结物",
+ "tag": [],
+ "icon": "res/icon/10024.jpg",
+ "numType": 0,
+ "name": "素质点",
+ "num": 1,
+ "sub": [],
+ "level": 1
+}

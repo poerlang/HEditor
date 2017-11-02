@@ -1,0 +1,28 @@
+{
+	"outs": [
+		{
+			"name": "将军令",
+			"num": 1,
+			"level": 1
+		}
+	],
+	"ins": [
+		{
+			"name": "金砖",
+			"num": 18,
+			"level": 1
+		}
+	],
+	"keys": [
+		"将军令",
+		"jiangjunling",
+		"jjl",
+		"金砖",
+		"jinzhuan",
+		"jz"
+	],
+	"name": "778C42AC-751D-337A-41D6-DDE2E747C35F",
+	"tags": [
+		"商城"
+	]
+}

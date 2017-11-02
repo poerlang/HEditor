@@ -2,7 +2,6 @@ package core.panels.base
 {
 	import flash.ui.Keyboard;
 	
-	
 	import rawui.UI_AlertInput;
 
 	public class AlertInput extends BaseWindow
@@ -27,9 +26,9 @@ package core.panels.base
 			v.m_ok.addClickListener(onOK);
 			v.m_cancel.addClickListener(onCancel);
 		}
-		public static function showTxt(str,onOKFun:Function=null,onCancelFun:Function=null):void
+		public static function showTxt(str,onOKFun:Function=null,onCancelFun:Function=null,txt:String=null):void
 		{
-			_ins.v.m_txt.text = "";
+			_ins.v.m_txt.text = txt?txt:"";
 			AlertInput.onOKFun = onOKFun;
 			AlertInput.onCancelFun = onCancelFun;
 			_ins.v.m_title.text = str;

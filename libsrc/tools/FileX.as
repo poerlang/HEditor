@@ -184,7 +184,7 @@ package tools
 			return f.name.replace("."+f.extension,"");
 		}
 		
-		public static function dirToList(dirPath:String, list:GList, UI_URL:String, fun:Function ,passExtArr:Array=null):void
+		public static function dirToList(dirPath:String, list:GList, UI_URL:String, fun:Function ,passExtArr:Array=null,isImg:Boolean=false):void
 		{
 			list.removeChildren(0,-1,true);
 			var dir:File = File.applicationDirectory;
@@ -201,11 +201,19 @@ package tools
 					if(f.extension && ext=="ds_store")continue;
 					if(f.extension && passExtArr.indexOf(ext)>=0){continue;}
 				}
-				var str:String = FileX.FileToString(f.url);
-				var ob:Object = JSON.parse(str);
-				var item:GComponent = list.addItem(UI_URL).asCom;
-				item.name = f.name;
-				fun(ob,item);
+				var item:GComponent;
+				if(isImg){
+					item = list.addItem(UI_URL).asCom;
+					item.icon = f.url;
+					fun(f.name,item);
+				}else{
+					var str:String = FileX.FileToString(f.url);
+					var ob:Object = JSON.parse(str);
+					item = list.addItem(UI_URL).asCom;
+					item.name = f.name;
+					fun(ob,item);
+				}
+
 			}
 		}
 	}

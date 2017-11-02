@@ -13,8 +13,6 @@ package rawui
 		public var m_beziBg:GGraph;
 		public var m_beziStart:GGraph;
 		public var m_beziEnd:GGraph;
-		public var m_dragStart:GComponent;
-		public var m_dragEnd:GComponent;
 		public var m_addMax:GButton;
 		public var m_subMax:GButton;
 		public var m_max:UI_NumericInput;
@@ -44,14 +42,12 @@ package rawui
 			m_beziBg = GGraph(this.getChildAt(5));
 			m_beziStart = GGraph(this.getChildAt(6));
 			m_beziEnd = GGraph(this.getChildAt(7));
-			m_dragStart = GComponent(this.getChildAt(8));
-			m_dragEnd = GComponent(this.getChildAt(9));
-			m_addMax = GButton(this.getChildAt(10));
-			m_subMax = GButton(this.getChildAt(11));
-			m_max = UI_NumericInput(this.getChildAt(13));
-			m_minMaxGroup = GGroup(this.getChildAt(14));
-			m_lines = GGraph(this.getChildAt(15));
-			m_bezi = UI_BeziContainer(this.getChildAt(16));
+			m_addMax = GButton(this.getChildAt(8));
+			m_subMax = GButton(this.getChildAt(9));
+			m_max = UI_NumericInput(this.getChildAt(11));
+			m_minMaxGroup = GGroup(this.getChildAt(12));
+			m_lines = GGraph(this.getChildAt(13));
+			m_bezi = UI_BeziContainer(this.getChildAt(14));
 		}
 	}
 }

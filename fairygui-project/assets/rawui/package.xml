@@ -190,6 +190,9 @@
     <component id="xay58b" name="LevelPos.xml" path="/" exported="true"/>
     <component id="xay58c" name="LevelPosDrager.xml" path="/"/>
     <component id="g34m8d" name="BeziArea.xml" path="/BuffEditor/"/>
+    <component id="pasn8e" name="StuffSelPanel.xml" path="/" exported="true"/>
+    <component id="px7w8f" name="IconSelPanel.xml" path="/" exported="true"/>
+    <component id="px7w8g" name="IconBtn.xml" path="/" exported="true"/>
   </resources>
   <publish name="rawui" path="D:\GameEditor\bin-debug\res" packageCount="2" genCode="true">
     <atlas name="默认" index="0"/>

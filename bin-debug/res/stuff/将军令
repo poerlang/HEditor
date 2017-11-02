@@ -1,0 +1,17 @@
+{
+ "tag": [],
+ "numStr": [],
+ "keys": [
+  "将军令",
+  "jiangjunling",
+  "jjl"
+ ],
+ "getWay": "",
+ "sub": [],
+ "icon": "res/icon/10063.jpg",
+ "numType": 0,
+ "name": "将军令",
+ "num": 1,
+ "level": 1,
+ "desc": ""
+}
