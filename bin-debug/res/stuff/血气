@@ -1,0 +1,17 @@
+{
+	"num": 1,
+	"tag": [],
+	"getWay": "",
+	"name": "血气",
+	"sub": [],
+	"numStr": [],
+	"desc": "",
+	"numType": 0,
+	"keys": [
+		"血气",
+		"xueqi",
+		"xq"
+	],
+	"level": 1,
+	"icon": ""
+}

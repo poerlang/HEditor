@@ -1,0 +1,17 @@
+{
+ "name": "五百滴血",
+ "num": 1,
+ "sub": [],
+ "tag": [],
+ "icon": "res/icon/3400.jpg",
+ "keys": [
+  "五百滴血",
+  "wubaidixue",
+  "wbdx"
+ ],
+ "numStr": [],
+ "getWay": "",
+ "desc": "",
+ "numType": 0,
+ "level": 1
+}

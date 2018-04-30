@@ -1,0 +1,17 @@
+{
+	"desc": "",
+	"num": 1,
+	"numStr": [],
+	"numType": 0,
+	"icon": "",
+	"keys": [
+		"速度",
+		"sudu",
+		"sd"
+	],
+	"tag": [],
+	"name": "速度",
+	"getWay": "",
+	"level": 1,
+	"sub": []
+}

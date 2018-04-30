@@ -1,24 +1,42 @@
 {
- "tag": [],
+ "sub": [
+  {
+   "num": 1000,
+   "name": "血气",
+   "hasLevel": false,
+   "level": 1
+  },
+  {
+   "num": 10,
+   "name": "外功",
+   "hasLevel": false,
+   "level": 1
+  },
+  {
+   "num": 5,
+   "name": "速度",
+   "hasLevel": false,
+   "level": 1
+  },
+  {
+   "num": 1000,
+   "name": "血气最大值",
+   "hasLevel": false,
+   "level": 1
+  }
+ ],
+ "numStr": [],
+ "num": 1,
+ "desc": "",
+ "level": 1,
  "getWay": "",
  "keys": [
   "异人男",
   "yirennan",
   "yrn"
  ],
- "numStr": [],
- "desc": "",
- "numType": 0,
- "sub": [
-  {
-   "hasLevel": false,
-   "name": "素质点",
-   "num": 2,
-   "level": 1
-  }
- ],
  "name": "异人男",
- "num": 1,
- "level": 1,
+ "numType": 0,
+ "tag": [],
  "icon": ""
 }

@@ -1,0 +1,28 @@
+{
+	"keys": [
+		"五百滴血",
+		"wubaidixue",
+		"wbdx",
+		"银两",
+		"yinliang",
+		"yl"
+	],
+	"outs": [
+		{
+			"name": "五百滴血",
+			"num": 1,
+			"level": 1
+		}
+	],
+	"name": "F4799947-F66F-897E-41E8-A2A53D9BC29E",
+	"tags": [
+		"商城"
+	],
+	"ins": [
+		{
+			"name": "银两",
+			"num": 10,
+			"level": 1
+		}
+	]
+}
